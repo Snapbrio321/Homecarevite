@@ -1,0 +1,165 @@
+import React, { useState } from 'react'
+import { FiPhone, FiArrowRight, FiCheckCircle, FiStar } from 'react-icons/fi'
+import { MdHealthAndSafety } from 'react-icons/md'
+import './Hero.css'
+
+const trustBadges = [
+  'Licensed & Certified Nurses',
+  '24/7 Availability',
+  'Personalized Care Plans',
+]
+
+export default function Hero() {
+  const [phone, setPhone] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (phone) window.location.href = `tel:${phone}`
+  }
+
+  return (
+    <section id="home" className="hero" aria-label="Home Care Vite - Home">
+      {/* Background shapes */}
+      <div className="hero__bg-shape hero__bg-shape--1" aria-hidden="true" />
+      <div className="hero__bg-shape hero__bg-shape--2" aria-hidden="true" />
+      <div className="hero__bg-shape hero__bg-shape--3" aria-hidden="true" />
+
+      <div className="container hero__inner">
+        {/* Left: Content */}
+        <div className="hero__content">
+          <div className="badge">
+            <MdHealthAndSafety size={14} />
+            Trusted Home Nursing Care
+          </div>
+
+          <h1 className="hero__title">
+            Professional Nursing Care,<br />
+            <span className="hero__title-accent">Right at Your Home</span>
+          </h1>
+
+          <p className="hero__desc">
+            Home Care Vite brings compassionate, skilled nursing services directly to your doorstep. Our certified nurses deliver hospital-quality care in the comfort and safety of your own home.
+          </p>
+
+          {/* Trust badges */}
+          <ul className="hero__badges" aria-label="Key features">
+            {trustBadges.map((b) => (
+              <li key={b} className="hero__badge">
+                <FiCheckCircle className="hero__badge-icon" aria-hidden="true" />
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA Buttons */}
+          <div className="hero__ctas">
+            <a href="#contact" className="btn-primary hero__cta-main">
+              Get Free Consultation
+              <FiArrowRight size={18} />
+            </a>
+            <a href="tel:+919110581825" className="btn-outline hero__cta-call">
+              <FiPhone size={18} />
+              +91 91105 81825
+            </a>
+          </div>
+
+          {/* Social proof */}
+          <div className="hero__social-proof">
+            <div className="hero__avatars" aria-hidden="true">
+              {[
+                { name: 'Venkat',  bg: '#1B3F8B' },
+                { name: 'Karthik', bg: '#3A7D2C' },
+                { name: 'Lakshmi', bg: '#2a5ab5' },
+                { name: 'Suresh',  bg: '#4a9e38' },
+              ].map((p, i) => (
+                <span
+                  key={i}
+                  className="hero__avatar"
+                  style={{ '--i': i, background: p.bg }}
+                  title={p.name}
+                >
+                  {p.name.slice(0, 2)}
+                </span>
+              ))}
+            </div>
+            <div className="hero__proof-text">
+              <div className="hero__stars" aria-label="5 star rating">
+                {[...Array(5)].map((_, i) => <FiStar key={i} size={14} fill="#f59e0b" color="#f59e0b" />)}
+              </div>
+              <p><strong>500+</strong> families across Andhra Pradesh trust us</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Card */}
+        <div className="hero__card-wrap" aria-hidden="true">
+          <div className="hero__card">
+            <div className="hero__card-header">
+              <div className="hero__card-icon">
+                <MdHealthAndSafety size={32} color="var(--white)" />
+              </div>
+              <div>
+                <p className="hero__card-label">Request a Nurse</p>
+                <p className="hero__card-sub">Quick & easy scheduling</p>
+              </div>
+            </div>
+
+            <form className="hero__form" onSubmit={handleSubmit} aria-label="Quick callback form">
+              <div className="hero__form-group">
+                <label htmlFor="hero-name">Full Name</label>
+                <input id="hero-name" type="text" placeholder="Your full name" />
+              </div>
+              <div className="hero__form-group">
+                <label htmlFor="hero-phone">Phone Number</label>
+                <input
+                  id="hero-phone"
+                  type="tel"
+                  placeholder="Your phone number"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                />
+              </div>
+              <div className="hero__form-group">
+                <label htmlFor="hero-service">Service Needed</label>
+                <select id="hero-service">
+                  <option value="">Select a service</option>
+                  <option>Post-Surgery Care</option>
+                  <option>Elderly Care</option>
+                  <option>Wound Care</option>
+                  <option>Medication Management</option>
+                  <option>Physiotherapy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <button type="submit" className="btn-secondary hero__form-btn">
+                Request a Callback
+                <FiArrowRight size={16} />
+              </button>
+            </form>
+
+            <p className="hero__card-note">
+              <FiCheckCircle size={13} color="var(--green)" /> Free assessment · No commitment required
+            </p>
+          </div>
+
+          {/* Floating stats */}
+          <div className="hero__stat hero__stat--1">
+            <span className="hero__stat-num">2023</span>
+            <span className="hero__stat-label">Est. Year</span>
+          </div>
+          <div className="hero__stat hero__stat--2">
+            <span className="hero__stat-num">98%</span>
+            <span className="hero__stat-label">Patient Satisfaction</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Wave divider */}
+      <div className="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--white)" />
+        </svg>
+      </div>
+    </section>
+  )
+}

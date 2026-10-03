@@ -1,0 +1,306 @@
+.services {
+  background: var(--off-white);
+  position: relative;
+}
+
+/* Header */
+.services__header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── GRID ─── */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+/* ─── CARD ─── */
+.svc-card {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.34,1.4,0.64,1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  position: relative;
+}
+
+/* Coloured top accent bar */
+.svc-card__bar {
+  height: 5px;
+  background: var(--accent);
+  width: 100%;
+  flex-shrink: 0;
+  transition: height 0.3s ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-8px);
+  border-color: transparent;
+  box-shadow: 0 20px 50px -8px rgba(0,0,0,0.15),
+              0 0 0 1.5px var(--accent);
+}
+
+.svc-card:hover .svc-card__bar {
+  height: 6px;
+}
+
+.svc-card:hover .svc-card__icon-ring {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.svc-card:hover .svc-card__icon-ring svg {
+  filter: brightness(0) invert(1);
+}
+
+.svc-card:hover .svc-card__tag {
+  background: var(--accent);
+  color: white;
+  opacity: 1;
+}
+
+.svc-card:hover .svc-card__cta {
+  background: var(--accent);
+  color: white;
+}
+
+/* ─── ICON AREA ─── */
+.svc-card__icon-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 22px 0;
+}
+
+/* Glassy icon ring */
+.svc-card__icon-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              background 0.3s ease,
+              box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle inner shine */
+.svc-card__icon-ring::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, transparent 100%);
+  border-radius: 22px 22px 0 0;
+  pointer-events: none;
+}
+
+.svc-card--hovered .svc-card__icon-ring {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+/* Invert icon colour when hovered */
+.svc-card--hovered .svc-card__icon-ring svg {
+  filter: brightness(0) invert(1);
+}
+
+/* Tag badge */
+.svc-card__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--light);
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--accent);
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.svc-card--hovered .svc-card__tag {
+  background: var(--accent);
+  color: white;
+  opacity: 1;
+}
+
+/* ─── BODY ─── */
+.svc-card__body {
+  padding: 18px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.svc-card__title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.svc-card__desc {
+  font-size: 0.865rem;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+/* Features */
+.svc-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--light);
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.svc-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.svc-card__feature-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* CTA */
+.svc-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  text-decoration: none;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.svc-card__cta:hover,
+.svc-card--hovered .svc-card__cta {
+  background: var(--accent);
+  color: white;
+}
+
+.svc-card__cta-arrow {
+  transition: transform 0.25s ease;
+}
+
+.svc-card--hovered .svc-card__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── BOTTOM CTA ─── */
+.services__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+  border-radius: 24px;
+  padding: 36px 48px;
+}
+
+.services__cta-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.services__cta-left strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.services__cta-left p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.services__cta-btn {
+  background: white;
+  color: var(--navy);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.services__cta-btn:hover {
+  background: var(--off-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1200px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__cta {
+    flex-direction: column;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .services__cta-left {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services__cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

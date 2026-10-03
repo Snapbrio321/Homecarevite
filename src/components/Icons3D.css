@@ -1,0 +1,50 @@
+.icon3d {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glassy 3D background sphere — no backdrop-filter (performance) */
+.icon3d__bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.08) 60%, transparent 100%);
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+
+/* Bottom shadow — box-shadow is GPU-friendly vs filter:blur */
+.icon3d__shadow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.22);
+  background: transparent;
+}
+
+.icon3d__svg {
+  position: relative;
+  z-index: 1;
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              filter 0.3s ease;
+}
+
+/* Colour-tinted backgrounds per service */
+.icon3d--surgery   .icon3d__bg { background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(100,150,255,0.2) 60%, rgba(27,63,139,0.1) 100%); }
+.icon3d--elderly   .icon3d__bg { background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(100,220,80,0.2)  60%, rgba(45,98,33,0.1)   100%); }
+.icon3d--cardiac   .icon3d__bg { background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(255,100,100,0.2) 60%, rgba(192,57,43,0.1)  100%); }
+.icon3d--wound     .icon3d__bg { background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(50,200,160,0.2)  60%, rgba(14,102,85,0.1)  100%); }
+.icon3d--medication .icon3d__bg{ background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(180,100,255,0.2) 60%, rgba(91,44,111,0.1)  100%); }
+.icon3d--palliative .icon3d__bg{ background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(100,160,255,0.2) 60%, rgba(21,67,96,0.1)   100%); }
+.icon3d--physio    .icon3d__bg { background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(255,210,50,0.2)  60%, rgba(154,125,10,0.1) 100%); }
+.icon3d--motherbaby .icon3d__bg{ background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.6) 0%, rgba(255,120,120,0.2) 60%, rgba(146,43,33,0.1)  100%); }
