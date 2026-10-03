@@ -3,6 +3,8 @@ import { FiPhone, FiArrowRight, FiCheckCircle, FiStar } from 'react-icons/fi'
 import { MdHealthAndSafety } from 'react-icons/md'
 import './Hero.css'
 
+const FORMSPREE_ID = 'mrpbngpg'
+
 const trustBadges = [
   'Licensed & Certified Nurses',
   '24/7 Availability',
@@ -10,11 +12,36 @@ const trustBadges = [
 ]
 
 export default function Hero() {
-  const [phone, setPhone] = useState('')
+  const [heroForm, setHeroForm] = useState({ name: '', phone: '', service: '' })
+  const [heroSubmitted, setHeroSubmitted] = useState(false)
+  const [heroLoading, setHeroLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleHeroChange = (e) => {
+    const key = e.target.id.replace('hero-', '')
+    setHeroForm(prev => ({ ...prev, [key]: e.target.value }))
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (phone) window.location.href = `tel:${phone}`
+    setHeroLoading(true)
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'Full Name':      heroForm.name,
+          'Phone Number':   heroForm.phone,
+          'Service Needed': heroForm.service || 'Not specified',
+          '_subject':       `Callback Request from ${heroForm.name} — Home Care Vite`,
+          'Form Source':    'Hero Quick Callback Form',
+        }),
+      })
+      if (res.ok) setHeroSubmitted(true)
+    } catch {
+      // silent fail
+    } finally {
+      setHeroLoading(false)
+    }
   }
 
   return (
@@ -105,36 +132,40 @@ export default function Hero() {
             </div>
 
             <form className="hero__form" onSubmit={handleSubmit} aria-label="Quick callback form">
-              <div className="hero__form-group">
-                <label htmlFor="hero-name">Full Name</label>
-                <input id="hero-name" type="text" placeholder="Your full name" />
-              </div>
-              <div className="hero__form-group">
-                <label htmlFor="hero-phone">Phone Number</label>
-                <input
-                  id="hero-phone"
-                  type="tel"
-                  placeholder="Your phone number"
-                  value={phone}
-                  onChange={e => setPhone(e.target.value)}
-                />
-              </div>
-              <div className="hero__form-group">
-                <label htmlFor="hero-service">Service Needed</label>
-                <select id="hero-service">
-                  <option value="">Select a service</option>
-                  <option>Post-Surgery Care</option>
-                  <option>Elderly Care</option>
-                  <option>Wound Care</option>
-                  <option>Medication Management</option>
-                  <option>Physiotherapy</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <button type="submit" className="btn-secondary hero__form-btn">
-                Request a Callback
-                <FiArrowRight size={16} />
-              </button>
+              {heroSubmitted ? (
+                <div className="hero__form-success">
+                  <FiCheckCircle size={32} color="var(--green)" />
+                  <p><strong>Request Received!</strong><br />We'll call you back shortly.</p>
+                </div>
+              ) : (
+                <>
+                  <div className="hero__form-group">
+                    <label htmlFor="hero-name">Full Name</label>
+                    <input id="hero-name" type="text" placeholder="Your full name"
+                      value={heroForm.name} onChange={handleHeroChange} required />
+                  </div>
+                  <div className="hero__form-group">
+                    <label htmlFor="hero-phone">Phone Number</label>
+                    <input id="hero-phone" type="tel" placeholder="Your phone number"
+                      value={heroForm.phone} onChange={handleHeroChange} required />
+                  </div>
+                  <div className="hero__form-group">
+                    <label htmlFor="hero-service">Service Needed</label>
+                    <select id="hero-service" value={heroForm.service} onChange={handleHeroChange}>
+                      <option value="">Select a service</option>
+                      <option>Post-Surgery Care</option>
+                      <option>Elderly Care</option>
+                      <option>Wound Care</option>
+                      <option>Medication Management</option>
+                      <option>Physiotherapy</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <button type="submit" className="btn-secondary hero__form-btn" disabled={heroLoading}>
+                    {heroLoading ? <span className="hero__form-spinner" /> : <>Request a Callback <FiArrowRight size={16} /></>}
+                  </button>
+                </>
+              )}
             </form>
 
             <p className="hero__card-note">

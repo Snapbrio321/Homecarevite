@@ -3,6 +3,8 @@ import { FiPhone, FiMail, FiMapPin, FiSend, FiCheckCircle } from 'react-icons/fi
 import { MdAccessTime } from 'react-icons/md'
 import './Contact.css'
 
+const FORMSPREE_ID = 'mrpbngpg'
+
 const contactInfo = [
   {
     icon: <FiPhone size={22} />,
@@ -44,16 +46,41 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
+    setError('')
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'Full Name':      form.name,
+          'Phone Number':   form.phone,
+          'Email':          form.email || 'Not provided',
+          'Service Needed': form.service,
+          'Message':        form.message || 'No additional details',
+          '_subject':       `New Care Request from ${form.name} — Home Care Vite`,
+        }),
+      })
+
+      if (res.ok) {
+        setSubmitted(true)
+        setForm({ name: '', phone: '', email: '', service: '', message: '' })
+      } else {
+        const data = await res.json()
+        setError(data?.errors?.[0]?.message || 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.')
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-    }, 1200)
+    }
   }
 
   return (
@@ -118,7 +145,7 @@ export default function Contact() {
                 <p>Your request has been received. A care coordinator will call you within <strong>one hour</strong> to discuss your needs.</p>
                 <button
                   className="btn-primary"
-                  onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', email: '', service: '', message: '' }) }}
+                  onClick={() => setSubmitted(false)}
                 >
                   Send Another Request
                 </button>
@@ -185,12 +212,18 @@ export default function Contact() {
                       id="contact-message"
                       name="message"
                       rows={4}
-                      placeholder="Tell us about the patient's condition, care needs, or any other details that would help us prepare..."
+                      placeholder="Tell us about the patient's condition, care needs, or any other details..."
                       value={form.message}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
+
+                {error && (
+                  <p className="contact__error" role="alert">
+                    ⚠️ {error}
+                  </p>
+                )}
 
                 <button
                   type="submit"
@@ -201,9 +234,7 @@ export default function Contact() {
                   {loading ? (
                     <span className="contact__spinner" aria-hidden="true" />
                   ) : (
-                    <>
-                      <FiSend size={16} /> Send Request — It's Free
-                    </>
+                    <><FiSend size={16} /> Send Request — It's Free</>
                   )}
                 </button>
 
