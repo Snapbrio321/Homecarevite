@@ -14,9 +14,9 @@ const contactInfo = [
   {
     icon: <FiMail size={22} />,
     label: 'Email',
-    value: 'care@homecarevite.com',
+    value: 'homecarevite@gmail.com',
     sub: 'We reply within 1 hour',
-    href: 'mailto:care@homecarevite.com',
+    href: 'mailto:homecarevite@gmail.com',
   },
   {
     icon: <FiMapPin size={22} />,

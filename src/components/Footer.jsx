@@ -75,8 +75,8 @@ export default function Footer({ onLegalClick }) {
               <a href="tel:+919110581825" className="footer__quick-link">
                 <FiPhone size={14} /> +91 91105 81825
               </a>
-              <a href="mailto:care@homecarevite.com" className="footer__quick-link">
-                <FiMail size={14} /> care@homecarevite.com
+              <a href="mailto:homecarevite@gmail.com" className="footer__quick-link">
+                <FiMail size={14} /> homecarevite@gmail.com
               </a>
               <span className="footer__quick-link">
                 <FiMapPin size={14} /> Greater Visakhapatnam
