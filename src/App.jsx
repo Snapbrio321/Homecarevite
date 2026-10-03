@@ -2,6 +2,7 @@ import React, { useState, lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import StructuredData from './components/StructuredData'
 import './App.css'
 
 // Lazy load everything below the fold
@@ -22,6 +23,7 @@ export default function App() {
 
   return (
     <>
+      <StructuredData />
       <Navbar />
       <main id="main-content">
         <Hero />

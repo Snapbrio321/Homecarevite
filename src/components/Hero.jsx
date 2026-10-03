@@ -45,7 +45,13 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="hero" aria-label="Home Care Vite - Home">
+    <section
+      id="home"
+      className="hero"
+      aria-label="Home Care Vite — Professional Home Nursing Services in Visakhapatnam"
+      itemScope
+      itemType="https://schema.org/WPHeader"
+    >
       {/* Background shapes */}
       <div className="hero__bg-shape hero__bg-shape--1" aria-hidden="true" />
       <div className="hero__bg-shape hero__bg-shape--2" aria-hidden="true" />
@@ -59,13 +65,13 @@ export default function Hero() {
             Trusted Home Nursing Care
           </div>
 
-          <h1 className="hero__title">
-            Professional Nursing Care,<br />
-            <span className="hero__title-accent">Right at Your Home</span>
+          <h1 className="hero__title" itemProp="headline">
+            Professional Home Nursing Care<br />
+            <span className="hero__title-accent">in Visakhapatnam</span>
           </h1>
 
-          <p className="hero__desc">
-            Home Care Vite brings compassionate, skilled nursing services directly to your doorstep. Our certified nurses deliver hospital-quality care in the comfort and safety of your own home.
+          <p className="hero__desc" itemProp="description">
+            Home Care Vite brings compassionate, skilled nursing services directly to your doorstep in Vizag. Our certified nurses deliver hospital-quality home care in the comfort and safety of your own home — available 24/7.
           </p>
 
           {/* Trust badges */}

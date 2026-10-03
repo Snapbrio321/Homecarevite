@@ -89,17 +89,23 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="services section-padding" aria-labelledby="services-heading">
+    <section
+      id="services"
+      className="services section-padding"
+      aria-labelledby="services-heading"
+      itemScope
+      itemType="https://schema.org/ItemList"
+    >
       <div className="container">
 
         {/* Header */}
         <div className="services__header">
           <div className="badge green">Our Services</div>
           <h2 id="services-heading" className="section-title">
-            Comprehensive Home Nursing Services
+            Comprehensive Home Nursing Services in Visakhapatnam
           </h2>
           <p className="section-subtitle">
-            From post-operative recovery to long-term chronic disease management, our certified nurses provide a full spectrum of medical care in the comfort of your home.
+            From post-operative recovery to long-term chronic disease management, our certified nurses provide a full spectrum of medical care in the comfort of your home in Vizag.
           </p>
         </div>
 
@@ -111,38 +117,42 @@ export default function Services() {
               className="svc-card"
               role="listitem"
               style={{ '--accent': svc.accent, '--light': svc.light }}
+              itemScope
+              itemType="https://schema.org/MedicalTherapy"
             >
                 {/* Top accent bar */}
                 <div className="svc-card__bar" />
 
                 {/* Icon area */}
                 <div className="svc-card__icon-area">
-                  <div className="svc-card__icon-ring">
-                    <svc.PhIcon
-                      size={46}
-                      color={svc.accent}
-                    />
+                  <div className="svc-card__icon-ring" aria-hidden="true">
+                    <svc.PhIcon size={46} color={svc.accent} />
                   </div>
                   <span className="svc-card__tag">{svc.tag}</span>
                 </div>
 
                 {/* Body */}
                 <div className="svc-card__body">
-                  <h3 className="svc-card__title">{svc.title}</h3>
-                  <p className="svc-card__desc">{svc.desc}</p>
+                  <h3 className="svc-card__title" itemProp="name">{svc.title}</h3>
+                  <p className="svc-card__desc" itemProp="description">{svc.desc}</p>
 
-                  <ul className="svc-card__features">
+                  <ul className="svc-card__features" aria-label={`${svc.title} features`}>
                     {svc.features.map((f) => (
                       <li key={f} className="svc-card__feature">
-                        <FiCheckCircle size={13} className="svc-card__feature-icon" />
+                        <FiCheckCircle size={13} className="svc-card__feature-icon" aria-hidden="true" />
                         {f}
                       </li>
                     ))}
                   </ul>
 
-                  <a href="#contact" className="svc-card__cta">
+                  <a
+                    href="#contact"
+                    className="svc-card__cta"
+                    aria-label={`Book ${svc.title} in Visakhapatnam — Home Care Vite`}
+                    title={`Book ${svc.title} at Home`}
+                  >
                     Book This Service
-                    <FiArrowRight size={14} className="svc-card__cta-arrow" />
+                    <FiArrowRight size={14} className="svc-card__cta-arrow" aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -152,14 +162,14 @@ export default function Services() {
         {/* Bottom CTA */}
         <div className="services__cta">
           <div className="services__cta-left">
-            <PiStethoscopeDuotone size={48} color="white" />
+            <PiStethoscopeDuotone size={48} color="white" aria-hidden="true" />
             <div>
               <strong>Don't see your specific need?</strong>
-              <p>We offer fully custom care plans designed around your unique situation.</p>
+              <p>We offer fully custom home care plans in Visakhapatnam designed around your unique situation.</p>
             </div>
           </div>
-          <a href="#contact" className="btn-primary services__cta-btn">
-            Discuss Your Care Needs <FiArrowRight size={16} />
+          <a href="#contact" className="btn-primary services__cta-btn" title="Contact Home Care Vite for custom nursing care">
+            Discuss Your Care Needs <FiArrowRight size={16} aria-hidden="true" />
           </a>
         </div>
 

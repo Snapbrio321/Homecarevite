@@ -85,17 +85,23 @@ export default function Testimonials() {
         {/* Cards */}
         <div className="testimonials__grid" role="list" aria-live="polite">
           {shown.map((t, i) => (
-            <article key={i} className="testimonial-card" role="listitem">
+            <article
+              key={i}
+              className="testimonial-card"
+              role="listitem"
+              itemScope
+              itemType="https://schema.org/Review"
+            >
               <div className="testimonial-card__quote" aria-hidden="true">
                 <MdFormatQuote size={40} />
               </div>
               <div className="testimonial-card__stars" aria-label={`${t.rating} out of 5 stars`}>
                 {[...Array(t.rating)].map((_, si) => (
-                  <FiStar key={si} size={15} fill="#f59e0b" color="#f59e0b" />
+                  <FiStar key={si} size={15} fill="#f59e0b" color="#f59e0b" aria-hidden="true" />
                 ))}
               </div>
-              <p className="testimonial-card__text">"{t.text}"</p>
-              <div className="testimonial-card__author">
+              <p className="testimonial-card__text" itemProp="reviewBody">"{t.text}"</p>
+              <div className="testimonial-card__author" itemScope itemType="https://schema.org/Person">
                 <div
                   className="testimonial-card__avatar"
                   style={{ background: t.color }}
@@ -104,7 +110,7 @@ export default function Testimonials() {
                   {t.initials}
                 </div>
                 <div>
-                  <p className="testimonial-card__name">{t.name}</p>
+                  <p className="testimonial-card__name" itemProp="name">{t.name}</p>
                   <p className="testimonial-card__role">{t.role}</p>
                 </div>
               </div>

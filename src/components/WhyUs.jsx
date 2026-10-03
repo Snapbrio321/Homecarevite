@@ -54,10 +54,10 @@ export default function WhyUs() {
         <div className="why-us__header">
           <div className="badge">Why Choose Us</div>
           <h2 id="why-us-heading" className="section-title">
-            The Home Care Vite Difference
+            Why Choose Home Care Vite in Visakhapatnam
           </h2>
           <p className="section-subtitle">
-            We combine clinical expertise with genuine compassion to deliver a home care experience that is safe, reliable, and centred entirely around you.
+            We combine clinical expertise with genuine compassion to deliver a home nursing experience that is safe, reliable, and centred entirely around you and your family.
           </p>
         </div>
 
