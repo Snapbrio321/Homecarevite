@@ -90,19 +90,19 @@ export default function Contact() {
         <div className="contact__header">
           <div className="badge">Contact Us</div>
           <h2 id="contact-heading" className="section-title">
-            Book a Home Nurse in Visakhapatnam
+            Home Care Nursing Services in Visakhapatnam
           </h2>
           <p className="section-subtitle">
-            Get a certified home nurse anywhere in Vizag within hours. Call us or fill the form — a care coordinator will contact you within one hour for a free home assessment.
+            Book certified home care nursing services anywhere in Vizag. Call us or fill the form — our care coordinator will contact you within one hour for a free home assessment.
           </p>
         </div>
 
         <div className="contact__inner">
           {/* Left: Info */}
           <div className="contact__info">
-            <h3 className="contact__info-title">Contact Us in Vizag</h3>
+            <h3 className="contact__info-title">Home Care Nursing Services Vizag</h3>
             <p className="contact__info-sub">
-              We serve all areas of Visakhapatnam — call us now and get a certified nurse at your home today.
+              We provide home care nursing services across all areas of Visakhapatnam. Call us now and get a certified nurse at your home today.
             </p>
 
             <div className="contact__cards" role="list">

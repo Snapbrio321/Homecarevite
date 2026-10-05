@@ -8,7 +8,7 @@ const structuredData = [
     "@id": "https://homecarevite.work.gd/#business",
     "name": "Home Care Vite",
     "alternateName": "HomeCareVite",
-    "description": "Home Care Vite provides certified, compassionate home nursing services in Visakhapatnam including post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care.",
+    "description": "Home Care Vite provides professional home care nursing services in Visakhapatnam including post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care across all areas of Vizag.",
     "url": "https://homecarevite.work.gd/",
     "logo": "https://homecarevite.work.gd/logo.jpeg",
     "image": "https://homecarevite.work.gd/og-image.jpg",
@@ -113,10 +113,10 @@ const structuredData = [
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What home nursing services does Home Care Vite provide in Visakhapatnam?",
+        "name": "What home care nursing services does Home Care Vite provide in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Home Care Vite provides post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby postnatal care — all delivered at your home in Visakhapatnam."
+          "text": "Home Care Vite provides home care nursing services in Visakhapatnam including post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby postnatal care — all delivered at your home across all areas of Vizag."
         }
       },
       {
@@ -129,18 +129,18 @@ const structuredData = [
       },
       {
         "@type": "Question",
-        "name": "Is home nursing care available 24 hours in Visakhapatnam?",
+        "name": "Are home care nursing services available 24 hours in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Home Care Vite is available 24 hours a day, 7 days a week including public holidays. You can reach us at any time by calling +91 91105 81825."
+          "text": "Yes. Home Care Vite home care nursing services are available 24 hours a day, 7 days a week including public holidays across all areas of Visakhapatnam. You can reach us at any time by calling +91 91105 81825."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I book a home nurse in Visakhapatnam?",
+        "name": "How do I book home care nursing services in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can book a home nurse by calling us at +91 91105 81825, filling out the online request form on our website, or emailing homecarevite@gmail.com. A care coordinator will contact you within one hour."
+          "text": "You can book home care nursing services in Visakhapatnam by calling us at +91 91105 81825, filling out the online request form on our website, or emailing homecarevite@gmail.com. A care coordinator will contact you within one hour."
         }
       },
       {

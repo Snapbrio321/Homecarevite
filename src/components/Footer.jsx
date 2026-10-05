@@ -69,7 +69,7 @@ export default function Footer({ onLegalClick }) {
               <img src={logo} alt="Home Care Vite Logo" />
             </a>
             <p className="footer__brand-desc">
-              Visakhapatnam's trusted home nursing service since 2023. Certified nurses serving MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada & all areas of Vizag — 24/7.
+              Visakhapatnam's trusted home care nursing services since 2023. Certified nurses serving MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada & all areas of Vizag — 24/7.
             </p>
             <div className="footer__contact-quick">
               <a href="tel:+919110581825" className="footer__quick-link">

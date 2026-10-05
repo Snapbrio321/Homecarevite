@@ -102,10 +102,10 @@ export default function Services() {
         <div className="services__header">
           <div className="badge green">Our Services</div>
           <h2 id="services-heading" className="section-title">
-            Comprehensive Home Nursing Services in Visakhapatnam
+            Home Care Nursing Services in Visakhapatnam
           </h2>
           <p className="section-subtitle">
-            From post-operative recovery to long-term chronic disease management, our certified nurses provide a full spectrum of medical care in the comfort of your home in Vizag.
+            From post-operative recovery to long-term chronic disease management, our certified nurses provide complete home care nursing services across all areas of Visakhapatnam (Vizag).
           </p>
         </div>
 

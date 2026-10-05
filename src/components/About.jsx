@@ -5,10 +5,10 @@ import caretakerImg from '../assets/caretaker.webp'
 import './About.css'
 
 const milestones = [
-  { year: '2023', label: 'Founded in Visakhapatnam with a mission to bring expert nursing home' },
-  { year: '2024', label: 'Expanded to all major areas of Vizag — MVP Colony, Gajuwaka, Rushikonda' },
-  { year: '2024', label: 'Launched 24/7 emergency nursing response across Visakhapatnam' },
-  { year: '2025', label: '500+ families in Vizag served with a 98% satisfaction rate' },
+  { year: '2023', label: 'Founded — home care nursing services launched in Visakhapatnam' },
+  { year: '2024', label: 'Expanded home care nursing to all major areas of Vizag' },
+  { year: '2024', label: 'Launched 24/7 emergency home care nursing response in Visakhapatnam' },
+  { year: '2025', label: '500+ families in Vizag served with 98% satisfaction' },
 ]
 
 const values = [
@@ -73,13 +73,13 @@ export default function About() {
           <div className="about__content">
             <div className="badge">About Us</div>
             <h2 id="about-heading" className="section-title">
-              Visakhapatnam's Trusted Home Nursing Service Since 2023
+              Visakhapatnam's Trusted Home Care Nursing Services Since 2023
             </h2>
             <p className="about__lead">
-              Home Care Vite is Visakhapatnam's dedicated home nursing service — founded in 2023 with a mission to bring hospital-quality care directly to patients' homes across Vizag.
+              Home Care Vite is Visakhapatnam's dedicated home care nursing service — founded in 2023 with a mission to bring professional nursing care directly to patients' homes across Vizag.
             </p>
             <p className="about__body">
-              We serve all areas of Visakhapatnam including MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada, Seethammadhara, Siripuram, Bheemunipatnam and surrounding localities. Our licensed nurses, physiotherapists and care coordinators deliver personalised care for every patient — from newborns to elderly, from post-surgical recovery to long-term chronic care.
+              We provide home care nursing services across all areas of Visakhapatnam including MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada, Seethammadhara, Siripuram, Bheemunipatnam and surrounding localities. Our licensed nurses, physiotherapists and care coordinators deliver personalised home care nursing for every patient — from newborns to elderly, from post-surgical recovery to long-term chronic care.
             </p>
 
             {/* Values */}
