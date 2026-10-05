@@ -58,6 +58,36 @@
     <!-- ── Theme color ── -->
     <meta name="theme-color" content="#1B3F8B" />
     <meta name="msapplication-TileColor" content="#1B3F8B" />
+
+    <!-- ── Site Name Schema (tells Google to show "Home Care Vite" not "Vercel") ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Home Care Vite",
+      "alternateName": ["HomeCareVite", "Home Care Vite Visakhapatnam"],
+      "url": "https://homecarevite.vercel.app/",
+      "description": "Professional home nursing services in Visakhapatnam — post-surgery care, elderly care, cardiac monitoring, wound care & more.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Home Care Vite",
+        "url": "https://homecarevite.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://homecarevite.vercel.app/favicon.jpeg",
+          "width": 512,
+          "height": 512
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9110581825",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Telugu"],
+          "areaServed": "IN"
+        }
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
