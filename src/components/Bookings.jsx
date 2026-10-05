@@ -205,7 +205,6 @@ export default function Bookings() {
             ))}
           </div>
         </div>
-        </div>
 
         {/* Booking Form + Info */}
         <div className="bookings__bottom">
