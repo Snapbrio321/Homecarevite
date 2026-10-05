@@ -217,10 +217,10 @@ export default function Bookings() {
           <div className="bookings__info">
             <h2 className="bookings__section-title">Why Book With Us?</h2>
             {[
-              { icon: <MdVerified size={22} />, title: 'Verified Nurses Only', desc: 'Every nurse is licensed, background-verified, and trained to our clinical standards.' },
-              { icon: <MdAccessTime size={22} />, title: '24/7 Availability', desc: 'We provide home care nursing across all areas of Visakhapatnam round the clock.' },
-              { icon: <FiCheckCircle size={22} />, title: 'Free Home Assessment', desc: 'A care coordinator visits your home before care begins — completely free.' },
-              { icon: <FiStar size={22} />, title: '98% Satisfaction Rate', desc: '500+ families in Vizag trust our home care nursing services.' },
+              { icon: <MdVerified size={22} />,     title: 'Verified Nurses Only',   desc: 'Every nurse is licensed, background-verified, and trained to our clinical standards.' },
+              { icon: <MdAccessTime size={22} />,   title: '24/7 Availability',      desc: 'Home care nursing across all areas of Visakhapatnam — round the clock.' },
+              { icon: <FiCheckCircle size={22} />,  title: 'Free Home Assessment',   desc: 'A care coordinator visits your home before care begins — completely free.' },
+              { icon: <FiStar size={22} />,         title: '98% Satisfaction Rate',  desc: '500+ families in Vizag trust our home care nursing services.' },
             ].map((item) => (
               <div key={item.title} className="bookings__info-item">
                 <div className="bookings__info-icon">{item.icon}</div>
@@ -233,7 +233,7 @@ export default function Bookings() {
             <div className="bookings__call">
               <p>Prefer to talk? Call us directly:</p>
               <a href="tel:+919110581825" className="btn-primary">
-                <FiArrowRight size={16} /> +91 91105 81825
+                +91 91105 81825
               </a>
             </div>
           </div>
@@ -242,80 +242,126 @@ export default function Bookings() {
           <div className="bookings__form-wrap">
             {submitted ? (
               <div className="bookings__success">
-                <FiCheckCircle size={48} />
-                <h3>Booking Request Received!</h3>
-                <p>Thank you! Our care coordinator will call you within <strong>one hour</strong> to confirm your booking and arrange a free home assessment.</p>
+                <div className="bookings__success-icon">
+                  <FiCheckCircle size={52} />
+                </div>
+                <h3>Booking Confirmed!</h3>
+                <p>Our care coordinator will call you within <strong>one hour</strong> to confirm your booking and arrange a free home assessment.</p>
                 <button className="btn-primary" onClick={() => setSubmitted(false)}>
                   Book Another Service
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} aria-label="Booking form" noValidate>
+
+                {/* Form Header */}
                 <div className="bookings__form-header">
-                  <h3>Book Now — {selectedPlan}</h3>
-                  <p>Fill the form and we'll confirm within 1 hour</p>
+                  <div className="bookings__form-header-left">
+                    <h3>Book Now</h3>
+                    <p>Selected plan: <span className="bookings__form-plan">{selectedPlan}</span></p>
+                  </div>
+                  <div className="bookings__form-header-price">
+                    <span>{plans.find(p => p.name === selectedPlan)?.price}</span>
+                    <small>per day</small>
+                  </div>
                 </div>
 
-                <div className="bookings__form-grid">
-                  <div className="form-group">
-                    <label htmlFor="b-name">Full Name *</label>
-                    <input id="b-name" name="name" type="text" placeholder="Your full name"
-                      value={form.name} onChange={handleChange} required />
+                {/* Step 1 — Personal Details */}
+                <div className="bookings__form-section">
+                  <p className="bookings__form-step">
+                    <span>1</span> Your Details
+                  </p>
+                  <div className="bookings__form-row">
+                    <div className="form-group">
+                      <label htmlFor="b-name">Full Name <span>*</span></label>
+                      <input id="b-name" name="name" type="text"
+                        placeholder="Enter your full name"
+                        value={form.name} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="b-phone">Phone Number <span>*</span></label>
+                      <input id="b-phone" name="phone" type="tel"
+                        placeholder="+91 XXXXX XXXXX"
+                        value={form.phone} onChange={handleChange} required />
+                    </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="b-phone">Phone Number *</label>
-                    <input id="b-phone" name="phone" type="tel" placeholder="Your phone number"
-                      value={form.phone} onChange={handleChange} required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="b-email">Email Address</label>
-                    <input id="b-email" name="email" type="email" placeholder="Your email (optional)"
+                    <label htmlFor="b-email">Email Address <span className="optional">(Optional)</span></label>
+                    <input id="b-email" name="email" type="email"
+                      placeholder="your@email.com"
                       value={form.email} onChange={handleChange} />
                   </div>
+                </div>
+
+                {/* Step 2 — Service Details */}
+                <div className="bookings__form-section">
+                  <p className="bookings__form-step">
+                    <span>2</span> Service Details
+                  </p>
+                  <div className="bookings__form-row">
+                    <div className="form-group">
+                      <label htmlFor="b-service">Service Required <span>*</span></label>
+                      <select id="b-service" name="service"
+                        value={form.service} onChange={handleChange} required>
+                        <option value="">— Select a service —</option>
+                        {services.map((s) => <option key={s.name}>{s.name}</option>)}
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="b-duration">Duration <span>*</span></label>
+                      <select id="b-duration" name="duration"
+                        value={form.duration} onChange={handleChange} required>
+                        <option value="">— Select duration —</option>
+                        {durations.map((d) => <option key={d}>{d}</option>)}
+                      </select>
+                    </div>
+                  </div>
                   <div className="form-group">
-                    <label htmlFor="b-service">Service Required *</label>
-                    <select id="b-service" name="service" value={form.service} onChange={handleChange} required>
-                      <option value="">Select service</option>
-                      {services.map((s) => <option key={s.name}>{s.name}</option>)}
-                    </select>
-                  </div>
-                  <div className="form-group form-group--full">
-                    <label htmlFor="b-duration">Duration *</label>
-                    <select id="b-duration" name="duration" value={form.duration} onChange={handleChange} required>
-                      <option value="">Select duration</option>
-                      {durations.map((d) => <option key={d}>{d}</option>)}
-                    </select>
-                  </div>
-                  <div className="form-group form-group--full">
-                    <label htmlFor="b-address">Address in Visakhapatnam *</label>
+                    <label htmlFor="b-address">Your Address in Visakhapatnam <span>*</span></label>
                     <input id="b-address" name="address" type="text"
-                      placeholder="Your area in Vizag (e.g. MVP Colony, Gajuwaka...)"
+                      placeholder="e.g. Flat 4B, Sunrise Apartments, MVP Colony, Vizag"
                       value={form.address} onChange={handleChange} required />
                   </div>
-                  <div className="form-group form-group--full">
-                    <label htmlFor="b-message">Patient Condition / Additional Notes</label>
-                    <textarea id="b-message" name="message" rows={3}
-                      placeholder="Brief description of patient condition, any special requirements..."
+                </div>
+
+                {/* Step 3 — Additional Info */}
+                <div className="bookings__form-section">
+                  <p className="bookings__form-step">
+                    <span>3</span> Patient Information <span className="optional">(Optional)</span>
+                  </p>
+                  <div className="form-group">
+                    <label htmlFor="b-message">Patient Condition / Special Requirements</label>
+                    <textarea id="b-message" name="message" rows={4}
+                      placeholder="Briefly describe the patient's condition, diagnosis, any special care requirements or equipment needed..."
                       value={form.message} onChange={handleChange} />
                   </div>
                 </div>
 
-                {error && <p className="contact__error" role="alert">⚠️ {error}</p>}
+                {error && (
+                  <p className="contact__error" role="alert">⚠️ {error}</p>
+                )}
 
                 <button
                   type="submit"
-                  className={`btn-secondary bookings__submit${loading ? ' loading' : ''}`}
+                  className={`bookings__submit-btn${loading ? ' loading' : ''}`}
                   disabled={loading}
                 >
-                  {loading
-                    ? <span className="contact__spinner" />
-                    : <><FiSend size={16} /> Confirm Booking — {selectedPlan}</>
-                  }
+                  {loading ? (
+                    <span className="contact__spinner" />
+                  ) : (
+                    <>
+                      <FiSend size={18} />
+                      Confirm Booking — {selectedPlan}
+                    </>
+                  )}
                 </button>
-                <p className="contact__privacy">
-                  <FiCheckCircle size={12} color="var(--green)" />
-                  Free assessment · No commitment · No hidden charges
-                </p>
+
+                <div className="bookings__form-trust">
+                  <span><FiCheckCircle size={13} color="var(--green)" /> Free assessment</span>
+                  <span><FiCheckCircle size={13} color="var(--green)" /> No commitment</span>
+                  <span><FiCheckCircle size={13} color="var(--green)" /> No hidden charges</span>
+                </div>
+
               </form>
             )}
           </div>
