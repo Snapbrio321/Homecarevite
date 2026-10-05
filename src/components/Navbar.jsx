@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { FiPhone, FiMenu, FiX } from 'react-icons/fi'
 import logo from '../assets/logo.jpeg'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home',         href: '#home'         },
-  { label: 'Services',     href: '#services'     },
-  { label: 'About Us',     href: '#about'        },
-  { label: 'Why Us',       href: '#why-us'       },
-  { label: 'Caregivers',   href: '#caregiver'    },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact',      href: '#contact'      },
+  { label: 'Home',         to: '/'             },
+  { label: 'Services',     to: '/services'     },
+  { label: 'About Us',     to: '/about'        },
+  { label: 'Why Us',       to: '/why-us'       },
+  { label: 'Caregivers',   to: '/caregivers'   },
+  { label: 'Testimonials', to: '/testimonials' },
+  { label: 'Contact',      to: '/contact'      },
 ]
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen,  setMenuOpen]  = useState(false)
-  const [activeLink,setActiveLink]= useState(window.location.hash || '#home')
+  const navigate = useNavigate()
 
   /* ── Throttled scroll listener ── */
   useEffect(() => {
@@ -34,22 +35,10 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* ── Sync active link with hash changes (back/forward) ── */
-  useEffect(() => {
-    const onHashChange = () => setActiveLink(window.location.hash || '#home')
-    window.addEventListener('hashchange', onHashChange)
-    return () => window.removeEventListener('hashchange', onHashChange)
-  }, [])
-
-  /* ── Handle nav click — update URL hash + smooth scroll ── */
-  const handleNav = (e, href) => {
-    e.preventDefault()
-    setActiveLink(href)
+  const handleNav = (to) => {
     setMenuOpen(false)
-    // Update the browser URL to show the hash (e.g. /# contact)
-    window.history.pushState(null, '', href)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    navigate(to)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -57,27 +46,29 @@ export default function Navbar() {
       <div className="container navbar__inner">
 
         {/* Logo */}
-        <a
-          href="#home"
+        <NavLink
+          to="/"
           className="navbar__logo"
-          onClick={(e) => handleNav(e, '#home')}
+          onClick={() => handleNav('/')}
           aria-label="Home Care Vite — Home Care Nursing Services Visakhapatnam"
         >
           <img src={logo} alt="Home Care Vite — Home Care Nursing Services Vizag" />
-        </a>
+        </NavLink>
 
         {/* Desktop Nav */}
         <nav className="navbar__links" aria-label="Main navigation">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`navbar__link${activeLink === link.href ? ' active' : ''}`}
-              onClick={(e) => handleNav(e, link.href)}
-              aria-current={activeLink === link.href ? 'page' : undefined}
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `navbar__link${isActive ? ' active' : ''}`
+              }
+              onClick={() => setMenuOpen(false)}
+              end={link.to === '/'}
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -109,15 +100,17 @@ export default function Navbar() {
       >
         <nav aria-label="Mobile navigation">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`navbar__mobile-link${activeLink === link.href ? ' active' : ''}`}
-              onClick={(e) => handleNav(e, link.href)}
-              aria-current={activeLink === link.href ? 'page' : undefined}
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `navbar__mobile-link${isActive ? ' active' : ''}`
+              }
+              onClick={() => handleNav(link.to)}
+              end={link.to === '/'}
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
           <a href="tel:+919110581825" className="btn-primary navbar__mobile-cta">
             <FiPhone size={16} /> Call Now

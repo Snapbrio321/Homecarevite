@@ -146,7 +146,7 @@ export default function Services() {
                   </ul>
 
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="svc-card__cta"
                     aria-label={`Book ${svc.title} in Visakhapatnam — Home Care Vite`}
                     title={`Book ${svc.title} at Home`}
@@ -168,7 +168,7 @@ export default function Services() {
               <p>We offer fully custom home care plans in Visakhapatnam designed around your unique situation.</p>
             </div>
           </div>
-          <a href="#contact" className="btn-primary services__cta-btn" title="Contact Home Care Vite for custom nursing care">
+          <a href="/contact" className="btn-primary services__cta-btn" title="Contact Home Care Vite for custom nursing care">
             Discuss Your Care Needs <FiArrowRight size={16} aria-hidden="true" />
           </a>
         </div>
@@ -177,3 +177,4 @@ export default function Services() {
     </section>
   )
 }
+

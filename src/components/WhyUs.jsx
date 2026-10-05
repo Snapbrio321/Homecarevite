@@ -89,7 +89,7 @@ export default function WhyUs() {
             ))}
           </div>
           <div className="how-it-works__cta">
-            <a href="#contact" className="btn-secondary">
+            <a href="/contact" className="btn-secondary">
               Get Your Free Assessment <FiArrowRight size={16} />
             </a>
           </div>
@@ -98,3 +98,4 @@ export default function WhyUs() {
     </section>
   )
 }
+

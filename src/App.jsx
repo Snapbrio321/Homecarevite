@@ -1,49 +1,58 @@
-import React, { useState, lazy, Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
 import StructuredData from './components/StructuredData'
 import './App.css'
 
-// Lazy load everything below the fold
-const About       = lazy(() => import('./components/About'))
-const WhyUs       = lazy(() => import('./components/WhyUs'))
-const Caregiver   = lazy(() => import('./components/Caregiver'))
-const Testimonials= lazy(() => import('./components/Testimonials'))
-const Contact     = lazy(() => import('./components/Contact'))
-const Footer      = lazy(() => import('./components/Footer'))
-const LegalModal  = lazy(() => import('./components/LegalModal'))
+// Eager load home page
+import HomePage from './pages/HomePage'
+
+// Lazy load all other pages
+const ServicesPage     = lazy(() => import('./pages/ServicesPage'))
+const AboutPage        = lazy(() => import('./pages/AboutPage'))
+const WhyUsPage        = lazy(() => import('./pages/WhyUsPage'))
+const CaregiverPage    = lazy(() => import('./pages/CaregiverPage'))
+const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'))
+const ContactPage      = lazy(() => import('./pages/ContactPage'))
+
+// Lazy load footer & legal modal
+const Footer    = lazy(() => import('./components/Footer'))
+const LegalModal= lazy(() => import('./components/LegalModal'))
+
+import { useState } from 'react'
 
 const SectionFallback = () => (
-  <div style={{ minHeight: '200px', background: 'var(--off-white)' }} aria-hidden="true" />
+  <div style={{ minHeight: '300px', background: 'var(--off-white)' }} aria-hidden="true" />
 )
 
-export default function App() {
+function AppContent() {
   const [legalModal, setLegalModal] = useState(null)
+  const location = useLocation()
+
+  // Scroll to top on route change
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [location.pathname])
 
   return (
     <>
       <StructuredData />
       <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Services />
-        <Suspense fallback={<SectionFallback />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<SectionFallback />}>
-          <WhyUs />
-        </Suspense>
-        <Suspense fallback={<SectionFallback />}>
-          <Caregiver />
-        </Suspense>
-        <Suspense fallback={<SectionFallback />}>
-          <Testimonials />
-        </Suspense>
-        <Suspense fallback={<SectionFallback />}>
-          <Contact />
-        </Suspense>
-      </main>
+
+      <Suspense fallback={<SectionFallback />}>
+        <Routes>
+          <Route path="/"             element={<HomePage />} />
+          <Route path="/services"     element={<ServicesPage />} />
+          <Route path="/about"        element={<AboutPage />} />
+          <Route path="/why-us"       element={<WhyUsPage />} />
+          <Route path="/caregivers"   element={<CaregiverPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/contact"      element={<ContactPage />} />
+          {/* Fallback */}
+          <Route path="*"             element={<HomePage />} />
+        </Routes>
+      </Suspense>
+
       <Suspense fallback={null}>
         <Footer onLegalClick={setLegalModal} />
       </Suspense>
@@ -54,5 +63,13 @@ export default function App() {
         </Suspense>
       )}
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   )
 }

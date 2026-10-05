@@ -96,10 +96,10 @@ export default function About() {
             </div>
 
             <div className="about__ctas">
-              <a href="#contact" className="btn-primary">
+              <a href="/contact" className="btn-primary">
                 Get Started Today <FiArrowRight size={16} />
               </a>
-              <a href="#why-us" className="about__learn-more">
+              <a href="/why-us" className="about__learn-more">
                 Why Choose Us? <FiArrowRight size={14} />
               </a>
             </div>
@@ -125,3 +125,4 @@ export default function About() {
     </section>
   )
 }
+

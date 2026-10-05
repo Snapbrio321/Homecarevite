@@ -86,7 +86,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="hero__ctas">
-            <a href="#contact" className="btn-primary hero__cta-main">
+            <a href="/contact" className="btn-primary hero__cta-main">
               Get Free Consultation
               <FiArrowRight size={18} />
             </a>
@@ -200,3 +200,4 @@ export default function Hero() {
     </section>
   )
 }
+

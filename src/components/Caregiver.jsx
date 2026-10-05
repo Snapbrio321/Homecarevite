@@ -199,7 +199,7 @@ export default function Caregiver() {
                 </div>
                 <h4>Not Fully Qualified Yet?</h4>
                 <p>We partner with nursing schools and training providers. If you're completing your certification, reach out — we may have a role for you.</p>
-                <a href="#contact" className="cg-req-card__link">
+                <a href="/contact" className="cg-req-card__link">
                   Contact our Recruitment Team <FiArrowRight size={14} />
                 </a>
 
@@ -259,3 +259,4 @@ export default function Caregiver() {
     </section>
   )
 }
+

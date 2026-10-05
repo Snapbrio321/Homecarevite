@@ -194,7 +194,7 @@ const structuredData = [
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://homecarevite.work.gd/?q={search_term_string}"
+        "urlTemplate": "https://homecarevite.work.gd/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -205,10 +205,13 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://homecarevite.work.gd/" },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://homecarevite.work.gd/#services" },
-      { "@type": "ListItem", "position": 3, "name": "About Us", "item": "https://homecarevite.work.gd/#about" },
-      { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://homecarevite.work.gd/#contact" }
+      { "@type": "ListItem", "position": 1, "name": "Home",         "item": "https://homecarevite.work.gd/" },
+      { "@type": "ListItem", "position": 2, "name": "Services",     "item": "https://homecarevite.work.gd/services" },
+      { "@type": "ListItem", "position": 3, "name": "About Us",     "item": "https://homecarevite.work.gd/about" },
+      { "@type": "ListItem", "position": 4, "name": "Why Us",       "item": "https://homecarevite.work.gd/why-us" },
+      { "@type": "ListItem", "position": 5, "name": "Caregivers",   "item": "https://homecarevite.work.gd/caregivers" },
+      { "@type": "ListItem", "position": 6, "name": "Testimonials", "item": "https://homecarevite.work.gd/testimonials" },
+      { "@type": "ListItem", "position": 7, "name": "Contact",      "item": "https://homecarevite.work.gd/contact" }
     ]
   }
 ]
