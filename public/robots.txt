@@ -1,11 +1,11 @@
 # robots.txt — Home Care Vite
-# https://homecarevite.vercel.app/
+# https://homecarevite.work.gd/
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://homecarevite.vercel.app/sitemap.xml
+Sitemap: https://homecarevite.work.gd/sitemap.xml
 
 # Block unnecessary paths
 Disallow: /node_modules/

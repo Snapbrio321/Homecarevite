@@ -5,13 +5,13 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "LocalBusiness"],
-    "@id": "https://homecarevite.vercel.app/#business",
+    "@id": "https://homecarevite.work.gd/#business",
     "name": "Home Care Vite",
     "alternateName": "HomeCareVite",
     "description": "Home Care Vite provides certified, compassionate home nursing services in Visakhapatnam including post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care.",
-    "url": "https://homecarevite.vercel.app/",
-    "logo": "https://homecarevite.vercel.app/logo.jpeg",
-    "image": "https://homecarevite.vercel.app/og-image.jpg",
+    "url": "https://homecarevite.work.gd/",
+    "logo": "https://homecarevite.work.gd/logo.jpeg",
+    "image": "https://homecarevite.work.gd/og-image.jpg",
     "telephone": "+919110581825",
     "email": "homecarevite@gmail.com",
     "foundingDate": "2023",
@@ -79,7 +79,7 @@ const structuredData = [
     "serviceType": "Home Nursing Services",
     "provider": {
       "@type": "LocalBusiness",
-      "@id": "https://homecarevite.vercel.app/#business"
+      "@id": "https://homecarevite.work.gd/#business"
     },
     "areaServed": {
       "@type": "City",
@@ -177,19 +177,19 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://homecarevite.vercel.app/#website",
-    "url": "https://homecarevite.vercel.app/",
+    "@id": "https://homecarevite.work.gd/#website",
+    "url": "https://homecarevite.work.gd/",
     "name": "Home Care Vite",
     "description": "Professional home nursing services in Visakhapatnam, Andhra Pradesh",
     "publisher": {
       "@type": "Organization",
-      "@id": "https://homecarevite.vercel.app/#business"
+      "@id": "https://homecarevite.work.gd/#business"
     },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://homecarevite.vercel.app/?q={search_term_string}"
+        "urlTemplate": "https://homecarevite.work.gd/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -200,10 +200,10 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://homecarevite.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://homecarevite.vercel.app/#services" },
-      { "@type": "ListItem", "position": 3, "name": "About Us", "item": "https://homecarevite.vercel.app/#about" },
-      { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://homecarevite.vercel.app/#contact" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://homecarevite.work.gd/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://homecarevite.work.gd/#services" },
+      { "@type": "ListItem", "position": 3, "name": "About Us", "item": "https://homecarevite.work.gd/#about" },
+      { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://homecarevite.work.gd/#contact" }
     ]
   }
 ]
