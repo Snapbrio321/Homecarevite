@@ -5,7 +5,7 @@ import {
   PiStethoscopeDuotone, PiPillDuotone, PiHandsPrayingDuotone,
   PiPersonSimpleRunDuotone, PiBabyDuotone,
 } from 'react-icons/pi'
-import { MdAccessTime, MdVerified, MdLocalOffer } from 'react-icons/md'
+import { MdAccessTime, MdVerified } from 'react-icons/md'
 import './Bookings.css'
 
 const FORMSPREE_ID = 'mrpbngpg'
@@ -204,10 +204,7 @@ export default function Bookings() {
               </div>
             ))}
           </div>
-          <div className="bookings__offer">
-            <MdLocalOffer size={20} />
-            <p><strong>Monthly Discount:</strong> Book for 30+ days and get <strong>10% off</strong> on your total care plan.</p>
-          </div>
+        </div>
         </div>
 
         {/* Booking Form + Info */}

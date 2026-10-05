@@ -254,25 +254,6 @@
   margin-left: 2px;
 }
 
-.bookings__offer {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(58,125,44,0.08);
-  border: 1px solid rgba(58,125,44,0.2);
-  border-radius: 12px;
-  padding: 14px 20px;
-  color: var(--green);
-  font-size: 0.9rem;
-}
-
-.bookings__offer p {
-  color: var(--text);
-}
-
-.bookings__offer strong {
-  color: var(--green);
-}
 
 /* ── BOTTOM ── */
 .bookings__bottom {
