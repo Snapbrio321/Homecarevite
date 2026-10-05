@@ -4,20 +4,21 @@ import logo from '../assets/logo.jpeg'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Caregivers', href: '#caregiver' },
+  { label: 'Home',         href: '#home'         },
+  { label: 'Services',     href: '#services'     },
+  { label: 'About Us',     href: '#about'        },
+  { label: 'Why Us',       href: '#why-us'       },
+  { label: 'Caregivers',   href: '#caregiver'    },
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact',      href: '#contact'      },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [activeLink, setActiveLink] = useState('#home')
+  const [scrolled,  setScrolled]  = useState(false)
+  const [menuOpen,  setMenuOpen]  = useState(false)
+  const [activeLink,setActiveLink]= useState(window.location.hash || '#home')
 
+  /* ── Throttled scroll listener ── */
   useEffect(() => {
     let ticking = false
     const onScroll = () => {
@@ -33,9 +34,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNav = (href) => {
+  /* ── Sync active link with hash changes (back/forward) ── */
+  useEffect(() => {
+    const onHashChange = () => setActiveLink(window.location.hash || '#home')
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  /* ── Handle nav click — update URL hash + smooth scroll ── */
+  const handleNav = (e, href) => {
+    e.preventDefault()
     setActiveLink(href)
     setMenuOpen(false)
+    // Update the browser URL to show the hash (e.g. /# contact)
+    window.history.pushState(null, '', href)
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -43,9 +55,15 @@ export default function Navbar() {
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} role="banner">
       <div className="container navbar__inner">
+
         {/* Logo */}
-        <a href="#home" className="navbar__logo" onClick={() => handleNav('#home')} aria-label="Home Care Vite Home">
-          <img src={logo} alt="Home Care Vite Logo" />
+        <a
+          href="#home"
+          className="navbar__logo"
+          onClick={(e) => handleNav(e, '#home')}
+          aria-label="Home Care Vite — Home Care Nursing Services Visakhapatnam"
+        >
+          <img src={logo} alt="Home Care Vite — Home Care Nursing Services Vizag" />
         </a>
 
         {/* Desktop Nav */}
@@ -55,7 +73,8 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`navbar__link${activeLink === link.href ? ' active' : ''}`}
-              onClick={(e) => { e.preventDefault(); handleNav(link.href) }}
+              onClick={(e) => handleNav(e, link.href)}
+              aria-current={activeLink === link.href ? 'page' : undefined}
             >
               {link.label}
             </a>
@@ -63,7 +82,11 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <a href="tel:+919110581825" className="navbar__cta btn-primary" aria-label="Call us now">
+        <a
+          href="tel:+919110581825"
+          className="navbar__cta btn-primary"
+          aria-label="Call Home Care Vite — +91 91105 81825"
+        >
           <FiPhone size={16} />
           Call Now
         </a>
@@ -80,14 +103,18 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`navbar__mobile${menuOpen ? ' navbar__mobile--open' : ''}`} aria-hidden={!menuOpen}>
+      <div
+        className={`navbar__mobile${menuOpen ? ' navbar__mobile--open' : ''}`}
+        aria-hidden={!menuOpen}
+      >
         <nav aria-label="Mobile navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className={`navbar__mobile-link${activeLink === link.href ? ' active' : ''}`}
-              onClick={(e) => { e.preventDefault(); handleNav(link.href) }}
+              onClick={(e) => handleNav(e, link.href)}
+              aria-current={activeLink === link.href ? 'page' : undefined}
             >
               {link.label}
             </a>
