@@ -6,9 +6,9 @@ import './Hero.css'
 const FORMSPREE_ID = 'mrpbngpg'
 
 const trustBadges = [
-  'Licensed & Certified Nurses',
-  '24/7 Availability',
-  'Personalized Care Plans',
+  'Licensed & Certified Nurses in Vizag',
+  '24/7 Availability in Visakhapatnam',
+  'Serving All Areas of Vizag',
 ]
 
 export default function Hero() {
@@ -66,12 +66,12 @@ export default function Hero() {
           </div>
 
           <h1 className="hero__title" itemProp="headline">
-            Professional Home Nursing Care<br />
-            <span className="hero__title-accent">in Visakhapatnam</span>
+            #1 Home Nursing Services<br />
+            <span className="hero__title-accent">in Visakhapatnam (Vizag)</span>
           </h1>
 
           <p className="hero__desc" itemProp="description">
-            Home Care Vite brings compassionate, skilled nursing services directly to your doorstep in Vizag. Our certified nurses deliver hospital-quality home care in the comfort and safety of your own home — available 24/7.
+            Home Care Vite provides certified home nurses across all areas of Visakhapatnam — MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada & more. Hospital-quality nursing care at your home in Vizag, available 24/7.
           </p>
 
           {/* Trust badges */}
@@ -119,7 +119,7 @@ export default function Hero() {
               <div className="hero__stars" aria-label="5 star rating">
                 {[...Array(5)].map((_, i) => <FiStar key={i} size={14} fill="#f59e0b" color="#f59e0b" />)}
               </div>
-              <p><strong>500+</strong> families across Andhra Pradesh trust us</p>
+              <p><strong>500+</strong> families across Visakhapatnam trust us</p>
             </div>
           </div>
         </div>

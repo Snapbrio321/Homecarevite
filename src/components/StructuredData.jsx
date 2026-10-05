@@ -31,16 +31,21 @@ const structuredData = [
       "longitude": "83.2185"
     },
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Visakhapatnam",
-        "sameAs": "https://en.wikipedia.org/wiki/Visakhapatnam"
-      },
+      { "@type": "City", "name": "Visakhapatnam", "sameAs": "https://en.wikipedia.org/wiki/Visakhapatnam" },
       { "@type": "City", "name": "Vizag" },
-      { "@type": "City", "name": "Gajuwaka" },
-      { "@type": "City", "name": "Rushikonda" },
-      { "@type": "City", "name": "MVP Colony" },
-      { "@type": "City", "name": "Dwaraka Nagar" }
+      { "@type": "Neighborhood", "name": "MVP Colony, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Dwaraka Nagar, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Gajuwaka, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Rushikonda, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Madhurawada, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Seethammadhara, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Siripuram, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Bheemunipatnam, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Kommadi, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Pendurthi, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "NAD Junction, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "PM Palem, Visakhapatnam" },
+      { "@type": "Neighborhood", "name": "Sujatha Nagar, Visakhapatnam" }
     ],
     "openingHoursSpecification": [
       {
