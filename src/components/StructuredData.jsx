@@ -211,7 +211,8 @@ const structuredData = [
       { "@type": "ListItem", "position": 4, "name": "Why Us",       "item": "https://homecarevite.work.gd/why-us" },
       { "@type": "ListItem", "position": 5, "name": "Caregivers",   "item": "https://homecarevite.work.gd/caregivers" },
       { "@type": "ListItem", "position": 6, "name": "Testimonials", "item": "https://homecarevite.work.gd/testimonials" },
-      { "@type": "ListItem", "position": 7, "name": "Contact",      "item": "https://homecarevite.work.gd/contact" }
+      { "@type": "ListItem", "position": 7, "name": "Bookings",      "item": "https://homecarevite.work.gd/bookings" },
+      { "@type": "ListItem", "position": 8, "name": "Contact",      "item": "https://homecarevite.work.gd/contact" }
     ]
   }
 ]

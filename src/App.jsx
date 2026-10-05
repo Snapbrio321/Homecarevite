@@ -14,6 +14,7 @@ const WhyUsPage        = lazy(() => import('./pages/WhyUsPage'))
 const CaregiverPage    = lazy(() => import('./pages/CaregiverPage'))
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'))
 const ContactPage      = lazy(() => import('./pages/ContactPage'))
+const BookingsPage     = lazy(() => import('./pages/BookingsPage'))
 
 // Lazy load footer & legal modal
 const Footer    = lazy(() => import('./components/Footer'))
@@ -48,6 +49,7 @@ function AppContent() {
           <Route path="/caregivers"   element={<CaregiverPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact"      element={<ContactPage />} />
+          <Route path="/bookings"     element={<BookingsPage />} />
           {/* Fallback */}
           <Route path="*"             element={<HomePage />} />
         </Routes>

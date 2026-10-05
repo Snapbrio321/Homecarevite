@@ -20,6 +20,7 @@ const footerLinks = {
   ],
   Support: [
     { label: 'Contact Us',         to: '/contact'             },
+    { label: 'Book a Service',     to: '/bookings'            },
     { label: 'FAQs',               to: '/contact'             },
     { label: 'Insurance & Billing',to: '/contact'             },
     { label: 'Patient Rights',     to: '/contact'             },

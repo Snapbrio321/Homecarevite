@@ -86,8 +86,8 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="hero__ctas">
-            <a href="/contact" className="btn-primary hero__cta-main">
-              Get Free Consultation
+            <a href="/bookings" className="btn-primary hero__cta-main">
+              Book a Nurse Now
               <FiArrowRight size={18} />
             </a>
             <a href="tel:+919110581825" className="btn-outline hero__cta-call">

@@ -11,6 +11,7 @@ const navLinks = [
   { label: 'Why Us',       to: '/why-us'       },
   { label: 'Caregivers',   to: '/caregivers'   },
   { label: 'Testimonials', to: '/testimonials' },
+  { label: 'Bookings',     to: '/bookings'     },
   { label: 'Contact',      to: '/contact'      },
 ]
 
