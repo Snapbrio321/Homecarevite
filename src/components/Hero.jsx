@@ -7,8 +7,8 @@ const FORMSPREE_ID = 'mrpbngpg'
 
 const trustBadges = [
   'Certified Home Care Nursing in Vizag',
-  '24/7 Home Care Nursing Services',
-  'All Areas of Visakhapatnam Covered',
+  'On Call Doctor & Nurse Services',
+  'Home Nursing for Senior Citizens',
 ]
 
 export default function Hero() {

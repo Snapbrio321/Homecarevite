@@ -101,7 +101,9 @@ const structuredData = [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Medication Management", "description": "Safe administration and monitoring of prescribed medications ensuring correct dosage and timing." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Palliative Care", "description": "Sensitive dignity-centred care focused on comfort and quality of life during serious illness." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Physiotherapy", "description": "In-home physiotherapy sessions to restore mobility and rebuild strength after injury or surgery." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mother and Baby Care", "description": "Dedicated postnatal nursing for new mothers and newborns including lactation support and newborn health checks." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mother and Baby Care", "description": "Dedicated postnatal nursing for new mothers and newborns including lactation support and newborn health checks." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "On Call Doctor Services", "description": "On call doctor and nurse available 24/7 for home visits across all areas of Visakhapatnam." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Nursing for Senior Citizens", "description": "Specialised home nursing services for senior citizens in Visakhapatnam including daily care, medication management, fall prevention and companionship." } }
       ]
     }
   },
@@ -165,6 +167,30 @@ const structuredData = [
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. Our post-surgery care service includes wound dressing, pain management, medication administration, mobility rehabilitation, and coordination with your treating physician during your recovery at home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer on call doctor services in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Home Care Vite provides on call doctor and on call nurse services in Visakhapatnam. Our medical team is available 24/7 for home visits across all areas of Vizag. Call +91 91105 81825 to book an on call doctor or nurse at home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide home nursing services for senior citizens in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Home Care Vite specialises in home nursing services for senior citizens in Visakhapatnam. Our certified nurses provide elderly care, daily assistance, medication management, mobility support, and chronic disease management for senior citizens at home across all areas of Vizag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What home nursing services are available for elderly patients in Vizag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Home Care Vite provides comprehensive home nursing services for elderly patients in Vizag including personal hygiene assistance, fall prevention, companionship visits, vital signs monitoring, medication management, and chronic disease care — all at home in Visakhapatnam."
         }
       },
       {
