@@ -153,18 +153,26 @@ export default function Testimonials() {
         {/* Trust bar */}
         <div className="testimonials__trust">
           {[
-            { label: 'Google Reviews', rating: '4.9/5', count: '412 reviews' },
-            { label: 'Practo',         rating: '4.8/5', count: '238 reviews' },
-            { label: 'JustDial',       rating: '4.9/5', count: '317 reviews' },
+            { label: 'Google Reviews', rating: '5.0/5', count: '7 reviews',  href: 'https://g.page/r/CVnJbcQE1AKIEAE/review', live: true },
+            { label: 'Practo',         rating: '4.8/5', count: 'Coming soon', href: '#', live: false },
+            { label: 'JustDial',       rating: '4.9/5', count: 'Coming soon', href: '#', live: false },
           ].map((t) => (
-            <div key={t.label} className="trust-item">
+            <a
+              key={t.label}
+              href={t.href}
+              target={t.live ? '_blank' : undefined}
+              rel={t.live ? 'noopener noreferrer' : undefined}
+              className={`trust-item${t.live ? ' trust-item--clickable' : ''}`}
+              aria-label={`${t.label} — ${t.rating} — ${t.count}`}
+            >
               <div className="trust-item__stars" aria-hidden="true">
                 {[...Array(5)].map((_, i) => <FiStar key={i} size={14} fill="#f59e0b" color="#f59e0b" />)}
               </div>
               <span className="trust-item__rating">{t.rating}</span>
               <span className="trust-item__platform">{t.label}</span>
               <span className="trust-item__count">{t.count}</span>
-            </div>
+              {t.live && <span className="trust-item__live">Rate Us ★</span>}
+            </a>
           ))}
         </div>
       </div>
