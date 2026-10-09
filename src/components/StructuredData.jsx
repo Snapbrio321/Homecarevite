@@ -12,7 +12,7 @@ const structuredData = [
     "url": "https://homecarevite.vercel.app/",
     "logo": "https://homecarevite.vercel.app/logo.jpeg",
     "image": "https://homecarevite.vercel.app/og-image.jpg",
-    "telephone": "+919110581825",
+    "telephone": "+918639057903",
     "email": "homecarevite@gmail.com",
     "foundingDate": "2023",
     "priceRange": "₹₹",
@@ -134,7 +134,7 @@ const structuredData = [
         "name": "Are home care nursing services available 24 hours in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Home Care Vite home care nursing services are available 24 hours a day, 7 days a week including public holidays across all areas of Visakhapatnam. You can reach us at any time by calling +91 91105 81825."
+          "text": "Yes. Home Care Vite home care nursing services are available 24 hours a day, 7 days a week including public holidays across all areas of Visakhapatnam. You can reach us at any time by calling +91 86390 57903."
         }
       },
       {
@@ -142,7 +142,7 @@ const structuredData = [
         "name": "How do I book home care nursing services in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can book home care nursing services in Visakhapatnam by calling us at +91 91105 81825, filling out the online request form on our website, or emailing homecarevite@gmail.com. A care coordinator will contact you within one hour."
+          "text": "You can book home care nursing services in Visakhapatnam by calling us at +91 86390 57903, filling out the online request form on our website, or emailing homecarevite@gmail.com. A care coordinator will contact you within one hour."
         }
       },
       {
@@ -174,7 +174,7 @@ const structuredData = [
         "name": "Do you offer on call doctor services in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Home Care Vite provides on call doctor and on call nurse services in Visakhapatnam. Our medical team is available 24/7 for home visits across all areas of Vizag. Call +91 91105 81825 to book an on call doctor or nurse at home."
+          "text": "Yes. Home Care Vite provides on call doctor and on call nurse services in Visakhapatnam. Our medical team is available 24/7 for home visits across all areas of Vizag. Call +91 86390 57903 to book an on call doctor or nurse at home."
         }
       },
       {
@@ -256,3 +256,4 @@ export default function StructuredData() {
     </>
   )
 }
+

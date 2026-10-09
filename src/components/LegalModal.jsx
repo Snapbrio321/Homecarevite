@@ -79,7 +79,7 @@ You can disable cookies in your browser settings. Note that disabling cookies ma
 • Right to Withdraw Consent: Withdraw your consent to data processing at any time (this will not affect past lawful processing).
 • Right to Complaint: Lodge a complaint with the relevant Indian data protection authority.
 
-To exercise any of these rights, please contact us at homecarevite@gmail.com or call +91 91105 81825.`,
+To exercise any of these rights, please contact us at homecarevite@gmail.com or call +91 86390 57903.`,
       },
       {
         heading: '9. Children\'s Privacy',
@@ -91,7 +91,7 @@ To exercise any of these rights, please contact us at homecarevite@gmail.com or 
       },
       {
         heading: '11. Contact Us',
-        body: `For any questions, concerns, or requests regarding this Privacy Policy, please contact:\n\nHome Care Vite\nEmail: homecarevite@gmail.com\nPhone: +91 91105 81825\nService Area: Greater Visakhapatnam, Andhra Pradesh`,
+        body: `For any questions, concerns, or requests regarding this Privacy Policy, please contact:\n\nHome Care Vite\nEmail: homecarevite@gmail.com\nPhone: +91 86390 57903\nService Area: Greater Visakhapatnam, Andhra Pradesh`,
       },
     ],
   },
@@ -169,7 +169,7 @@ All services are delivered by licensed, verified nursing professionals. Home Car
       },
       {
         heading: '10. Contact',
-        body: `For questions about these Terms, contact us at:\n\nHome Care Vite\nEmail: homecarevite@gmail.com\nPhone: +91 91105 81825`,
+        body: `For questions about these Terms, contact us at:\n\nHome Care Vite\nEmail: homecarevite@gmail.com\nPhone: +91 86390 57903`,
       },
     ],
   },
@@ -218,7 +218,7 @@ All services are delivered by licensed, verified nursing professionals. Home Car
       },
       {
         heading: 'Feedback & Contact',
-        body: `We welcome your feedback on accessibility. If you experience any difficulty accessing any part of our website or services, please contact us:\n\nEmail: homecarevite@gmail.com\nPhone: +91 91105 81825\n\nWe aim to respond to all accessibility feedback within 2 business days and will make every reasonable effort to provide the information in an accessible format.`,
+        body: `We welcome your feedback on accessibility. If you experience any difficulty accessing any part of our website or services, please contact us:\n\nEmail: homecarevite@gmail.com\nPhone: +91 86390 57903\n\nWe aim to respond to all accessibility feedback within 2 business days and will make every reasonable effort to provide the information in an accessible format.`,
       },
     ],
   },
@@ -284,7 +284,7 @@ We will NOT use or share your health information for marketing purposes or sell 
       },
       {
         heading: 'Complaints',
-        body: `If you believe your health information privacy rights have been violated, you may file a complaint with Home Care Vite directly or with the relevant Indian data protection authority. We will not retaliate against you for filing a complaint.\n\nTo file a complaint or for any questions:\n\nEmail: homecarevite@gmail.com\nPhone: +91 91105 81825\nHome Care Vite, Greater Visakhapatnam, Andhra Pradesh`,
+        body: `If you believe your health information privacy rights have been violated, you may file a complaint with Home Care Vite directly or with the relevant Indian data protection authority. We will not retaliate against you for filing a complaint.\n\nTo file a complaint or for any questions:\n\nEmail: homecarevite@gmail.com\nPhone: +91 86390 57903\nHome Care Vite, Greater Visakhapatnam, Andhra Pradesh`,
       },
     ],
   },
@@ -368,7 +368,7 @@ export default function LegalModal({ type, onClose }) {
 
         {/* Footer */}
         <div className="legal-modal__footer">
-          <p>Questions? Contact us at <a href="mailto:homecarevite@gmail.com">homecarevite@gmail.com</a> or <a href="tel:+919110581825">+91 91105 81825</a></p>
+          <p>Questions? Contact us at <a href="mailto:homecarevite@gmail.com">homecarevite@gmail.com</a> or <a href="tel:+918639057903">+91 86390 57903</a></p>
           <button className="btn-primary legal-modal__close-btn" onClick={onClose}>
             Close
           </button>
@@ -377,3 +377,4 @@ export default function LegalModal({ type, onClose }) {
     </div>
   )
 }
+

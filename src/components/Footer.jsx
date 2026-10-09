@@ -25,7 +25,7 @@ const footerLinks = {
     { label: 'Insurance & Billing',to: '/contact'             },
     { label: 'Patient Rights',     to: '/contact'             },
     { label: 'Feedback',           to: '/contact'             },
-    { label: 'Emergency Line',     to: 'tel:+919110581825', external: true },
+    { label: 'Emergency Line',     to: 'tel:+918639057903', external: true },
   ],
 }
 
@@ -42,8 +42,8 @@ export default function Footer({ onLegalClick }) {
             <p>Contact us today for a free, no-obligation home care nursing assessment in Visakhapatnam.</p>
           </div>
           <div className="footer__cta-actions">
-            <a href="tel:+919110581825" className="btn-primary footer__cta-btn">
-              <FiPhone size={16} /> Call +91 91105 81825
+            <a href="tel:+918639057903" className="btn-primary footer__cta-btn">
+              <FiPhone size={16} /> Call +91 86390 57903
             </a>
             <Link to="/contact" className="btn-outline footer__cta-btn">
               Request Online
@@ -65,8 +65,8 @@ export default function Footer({ onLegalClick }) {
               Visakhapatnam's trusted home care nursing services since 2023. Certified nurses serving MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada & all areas of Vizag — 24/7.
             </p>
             <div className="footer__contact-quick">
-              <a href="tel:+919110581825" className="footer__quick-link">
-                <FiPhone size={14} /> +91 91105 81825
+              <a href="tel:+918639057903" className="footer__quick-link">
+                <FiPhone size={14} /> +91 86390 57903
               </a>
               <a href="mailto:homecarevite@gmail.com" className="footer__quick-link">
                 <FiMail size={14} /> homecarevite@gmail.com
@@ -134,3 +134,4 @@ export default function Footer({ onLegalClick }) {
     </footer>
   )
 }
+

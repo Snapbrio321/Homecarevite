@@ -135,7 +135,7 @@ export default function Caregiver() {
                 <a href="#caregiver-apply" className="btn-secondary">
                   Apply Now <FiArrowRight size={16} />
                 </a>
-                <a href="tel:+919110581825" className="btn-outline">
+                <a href="tel:+918639057903" className="btn-outline">
                   <FiPhone size={15} /> Talk to Us
                 </a>
               </div>
@@ -259,4 +259,5 @@ export default function Caregiver() {
     </section>
   )
 }
+
 

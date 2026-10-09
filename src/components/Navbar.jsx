@@ -75,9 +75,9 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="tel:+919110581825"
+          href="tel:+918639057903"
           className="navbar__cta btn-primary"
-          aria-label="Call Home Care Vite — +91 91105 81825"
+          aria-label="Call Home Care Vite — +91 86390 57903"
         >
           <FiPhone size={16} />
           Call Now
@@ -113,7 +113,7 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <a href="tel:+919110581825" className="btn-primary navbar__mobile-cta">
+          <a href="tel:+918639057903" className="btn-primary navbar__mobile-cta">
             <FiPhone size={16} /> Call Now
           </a>
         </nav>
@@ -121,3 +121,4 @@ export default function Navbar() {
     </header>
   )
 }
+

@@ -11,9 +11,9 @@ const contactInfo = [
   {
     icon: <FiPhone size={22} />,
     label: 'Phone',
-    value: '+91 91105 81825',
+    value: '+91 86390 57903',
     sub: 'Available 24/7',
-    href: 'tel:+919110581825',
+    href: 'tel:+918639057903',
   },
   {
     icon: <FiMail size={22} />,
@@ -131,7 +131,7 @@ export default function Contact() {
               <FiPhone size={18} />
               <div>
                 <strong>Medical Emergency?</strong>
-                <p>For immediate nursing assistance, call us directly at <a href="tel:+919110581825">+91 91105 81825</a></p>
+                <p>For immediate nursing assistance, call us directly at <a href="tel:+918639057903">+91 86390 57903</a></p>
               </div>
             </div>
 
@@ -302,3 +302,4 @@ export default function Contact() {
     </section>
   )
 }
+

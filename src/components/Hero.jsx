@@ -90,9 +90,9 @@ export default function Hero() {
               Book a Nurse Now
               <FiArrowRight size={18} />
             </a>
-            <a href="tel:+919110581825" className="btn-outline hero__cta-call">
+            <a href="tel:+918639057903" className="btn-outline hero__cta-call">
               <FiPhone size={18} />
-              +91 91105 81825
+              +91 86390 57903
             </a>
           </div>
 
@@ -200,4 +200,5 @@ export default function Hero() {
     </section>
   )
 }
+
 

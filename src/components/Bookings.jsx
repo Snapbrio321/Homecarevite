@@ -118,10 +118,10 @@ export default function Bookings() {
         setSubmitted(true)
         setForm({ name: '', phone: '', email: '', service: '', duration: '', address: '', message: '' })
       } else {
-        setError('Something went wrong. Please call us directly at +91 91105 81825.')
+        setError('Something went wrong. Please call us directly at +91 86390 57903.')
       }
     } catch {
-      setError('Network error. Please call us at +91 91105 81825.')
+      setError('Network error. Please call us at +91 86390 57903.')
     } finally {
       setLoading(false)
     }
@@ -228,8 +228,8 @@ export default function Bookings() {
             ))}
             <div className="bookings__call">
               <p>Prefer to talk? Call us directly:</p>
-              <a href="tel:+919110581825" className="btn-primary">
-                +91 91105 81825
+              <a href="tel:+918639057903" className="btn-primary">
+                +91 86390 57903
               </a>
             </div>
           </div>
@@ -367,3 +367,4 @@ export default function Bookings() {
     </section>
   )
 }
+
