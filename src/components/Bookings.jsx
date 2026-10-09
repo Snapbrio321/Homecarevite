@@ -70,14 +70,25 @@ const plans = [
 ]
 
 const services = [
-  { icon: <PiFirstAidKitDuotone size={28} />,    name: 'Post-Surgery Care',       price: '₹1,200 – ₹2,000',  per: '/day' },
-  { icon: <PiStethoscopeDuotone size={28} />,    name: 'Elderly Care',            price: '₹800 – ₹1,500',    per: '/day' },
-  { icon: <PiHeartbeatDuotone size={28} />,      name: 'Cardiac Monitoring',      price: '₹1,000 – ₹1,800',  per: '/day' },
-  { icon: <PiBandaidsDuotone size={28} />,       name: 'Wound Care',              price: '₹400 – ₹700',      per: '/visit' },
-  { icon: <PiPillDuotone size={28} />,           name: 'Medication Management',   price: '₹500 – ₹800',      per: '/day' },
-  { icon: <PiHandsPrayingDuotone size={28} />,   name: 'Palliative Care',         price: '₹1,500 – ₹2,500',  per: '/day' },
-  { icon: <PiPersonSimpleRunDuotone size={28} />,name: 'Physiotherapy',           price: '₹600 – ₹1,000',    per: '/session' },
-  { icon: <PiBabyDuotone size={28} />,           name: 'Mother & Baby Care',      price: '₹800 – ₹1,200',    per: '/day' },
+  // Core Nursing Services
+  { icon: <PiFirstAidKitDuotone size={28} />,    name: 'Post-Surgery Care',                        price: '₹1,200 – ₹2,000',  per: '/day',      group: 'Nursing' },
+  { icon: <PiStethoscopeDuotone size={28} />,    name: 'Elderly Care',                             price: '₹800 – ₹1,500',    per: '/day',      group: 'Nursing' },
+  { icon: <PiHeartbeatDuotone size={28} />,      name: 'Cardiac Monitoring',                       price: '₹1,000 – ₹1,800',  per: '/day',      group: 'Nursing' },
+  { icon: <PiBandaidsDuotone size={28} />,       name: 'Wound Care',                               price: '₹400 – ₹700',      per: '/visit',    group: 'Nursing' },
+  { icon: <PiPillDuotone size={28} />,           name: 'Medication Management',                    price: '₹500 – ₹800',      per: '/day',      group: 'Nursing' },
+  { icon: <PiHandsPrayingDuotone size={28} />,   name: 'Palliative Care',                          price: '₹1,500 – ₹2,500',  per: '/day',      group: 'Nursing' },
+  { icon: <PiPersonSimpleRunDuotone size={28} />,name: 'Physiotherapy',                            price: '₹600 – ₹1,000',    per: '/session',  group: 'Nursing' },
+  { icon: <PiBabyDuotone size={28} />,           name: 'Mother & Baby Care',                       price: '₹800 – ₹1,200',    per: '/day',      group: 'Nursing' },
+  // Massage & Reflexology
+  { icon: <PiHandsPrayingDuotone size={28} />,   name: 'Full Body Massage Therapy',                price: '₹1,500',           per: '/sitting',  group: 'Massage' },
+  { icon: <PiHandsPrayingDuotone size={28} />,   name: 'Reflexology Therapy (Paralysis)',          price: '₹2,000',           per: '/sitting',  group: 'Massage' },
+  { icon: <PiHandsPrayingDuotone size={28} />,   name: 'Foot Reflexology & Massage',               price: '₹1,500',           per: '/sitting',  group: 'Massage' },
+  // Specialized
+  { icon: <PiHeartbeatDuotone size={28} />,      name: 'Cardiac & Respiratory Support Therapy',   price: '₹2,500',           per: '/sitting',  group: 'Specialized' },
+  // Hospital & Night Care
+  { icon: <PiFirstAidKitDuotone size={28} />,    name: 'Night-Time Patient Attendant',             price: '₹2,000',           per: '/night',    group: 'Hospital' },
+  // Infusion
+  { icon: <PiBandaidsDuotone size={28} />,       name: 'Home IV Infusion Service',                 price: '₹1,500',           per: '/infusion', group: 'Infusion' },
 ]
 
 const durations = ['1 Day', '3 Days', '1 Week', '2 Weeks', '1 Month', 'Ongoing']
@@ -300,7 +311,31 @@ export default function Bookings() {
                       <select id="b-service" name="service"
                         value={form.service} onChange={handleChange} required>
                         <option value="">— Select a service —</option>
-                        {services.map((s) => <option key={s.name}>{s.name}</option>)}
+                        <optgroup label="🏥 Nursing Services">
+                          {services.filter(s => s.group === 'Nursing').map((s) => (
+                            <option key={s.name} value={s.name}>{s.name} — {s.price}{s.per}</option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="💆 Massage & Reflexology">
+                          {services.filter(s => s.group === 'Massage').map((s) => (
+                            <option key={s.name} value={s.name}>{s.name} — {s.price}{s.per}</option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="❤️ Specialized Therapy">
+                          {services.filter(s => s.group === 'Specialized').map((s) => (
+                            <option key={s.name} value={s.name}>{s.name} — {s.price}{s.per}</option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="🏨 Hospital & Night Care">
+                          {services.filter(s => s.group === 'Hospital').map((s) => (
+                            <option key={s.name} value={s.name}>{s.name} — {s.price}{s.per}</option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="💉 Medical Infusion">
+                          {services.filter(s => s.group === 'Infusion').map((s) => (
+                            <option key={s.name} value={s.name}>{s.name} — {s.price}{s.per}</option>
+                          ))}
+                        </optgroup>
                       </select>
                     </div>
                     <div className="form-group">
