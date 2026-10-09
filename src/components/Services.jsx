@@ -10,7 +10,7 @@ import {
   PiPersonSimpleRunDuotone,
   PiBabyDuotone,
 } from 'react-icons/pi'
-import { MdSpa } from 'react-icons/md'
+import { MdSpa, MdFavorite } from 'react-icons/md'
 import './Services.css'
 
 const massageServices = [
@@ -43,6 +43,25 @@ const massageServices = [
     accent: '#0a7060',
     light: '#e0f5f1',
     note: null,
+  },
+]
+
+const specializedServices = [
+  {
+    title: 'Cardiac & Respiratory Support Therapy',
+    desc: 'Temperature-controlled supportive therapy for patients with cardiac conditions and lung diseases, subject to medical assessment and appropriate clinical supervision.',
+    price: '₹2,500',
+    per: 'per sitting',
+    features: [
+      'Temperature-controlled environment',
+      'Cardiac condition support',
+      'Lung disease management',
+      'Medical assessment required',
+      'Certified clinical supervision',
+    ],
+    accent: '#a93226',
+    light: '#fde8e6',
+    note: 'This therapy is subject to prior medical assessment. Clinical supervision is provided throughout each session. Not a replacement for prescribed medical treatment.',
   },
 ]
 
@@ -238,6 +257,58 @@ export default function Services() {
                   </div>
                 )}
                 <a href="/bookings" className="massage-card__cta">
+                  Book This Service <FiArrowRight size={14} aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Specialized Supportive Therapy Section ── */}
+        <div className="services__specialized">
+          <div className="services__specialized-header">
+            <div className="services__specialized-icon" aria-hidden="true">
+              <MdFavorite size={32} color="var(--white)" />
+            </div>
+            <div>
+              <div className="badge" style={{ marginBottom: '8px' }}>Specialized</div>
+              <h2 className="section-title" style={{ marginBottom: '8px' }}>
+                Specialized Supportive Therapy
+              </h2>
+              <p className="section-subtitle">
+                Advanced supportive therapies provided under clinical supervision for patients with complex medical conditions in Visakhapatnam.
+              </p>
+            </div>
+          </div>
+
+          <div className="specialized__grid">
+            {specializedServices.map((s, i) => (
+              <div key={i} className="specialized-card" style={{ '--accent': s.accent, '--light': s.light }}>
+                <div className="specialized-card__top">
+                  <div className="specialized-card__icon" aria-hidden="true">
+                    <MdFavorite size={28} color={s.accent} />
+                  </div>
+                  <div className="specialized-card__price-wrap">
+                    <span className="specialized-card__price">{s.price}</span>
+                    <span className="specialized-card__per">{s.per}</span>
+                  </div>
+                </div>
+                <h3 className="specialized-card__title">{s.title}</h3>
+                <p className="specialized-card__desc">{s.desc}</p>
+                <ul className="specialized-card__features">
+                  {s.features.map((f) => (
+                    <li key={f}>
+                      <FiCheckCircle size={13} aria-hidden="true" /> {f}
+                    </li>
+                  ))}
+                </ul>
+                {s.note && (
+                  <div className="specialized-card__note">
+                    <FiInfo size={13} aria-hidden="true" />
+                    <span>{s.note}</span>
+                  </div>
+                )}
+                <a href="/bookings" className="specialized-card__cta">
                   Book This Service <FiArrowRight size={14} aria-hidden="true" />
                 </a>
               </div>
