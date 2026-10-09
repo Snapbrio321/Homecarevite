@@ -159,11 +159,30 @@ export default function Hero() {
                     <label htmlFor="hero-service">Service Needed</label>
                     <select id="hero-service" value={heroForm.service} onChange={handleHeroChange}>
                       <option value="">Select a service</option>
-                      <option>Post-Surgery Care</option>
-                      <option>Elderly Care</option>
-                      <option>Wound Care</option>
-                      <option>Medication Management</option>
-                      <option>Physiotherapy</option>
+                      <optgroup label="🏥 Nursing Services">
+                        <option>Post-Surgery Care</option>
+                        <option>Elderly Care</option>
+                        <option>Cardiac Monitoring</option>
+                        <option>Wound Care</option>
+                        <option>Medication Management</option>
+                        <option>Palliative Care</option>
+                        <option>Physiotherapy</option>
+                        <option>Mother &amp; Baby Care</option>
+                      </optgroup>
+                      <optgroup label="💆 Massage &amp; Reflexology">
+                        <option>Full Body Massage Therapy</option>
+                        <option>Reflexology Therapy (Paralysis)</option>
+                        <option>Foot Reflexology &amp; Massage</option>
+                      </optgroup>
+                      <optgroup label="❤️ Specialized Therapy">
+                        <option>Cardiac &amp; Respiratory Support Therapy</option>
+                      </optgroup>
+                      <optgroup label="🏨 Hospital &amp; Night Care">
+                        <option>Night-Time Patient Attendant</option>
+                      </optgroup>
+                      <optgroup label="💉 Medical Infusion">
+                        <option>Home IV Infusion Service</option>
+                      </optgroup>
                       <option>Other</option>
                     </select>
                   </div>

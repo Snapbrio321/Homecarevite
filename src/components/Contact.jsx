@@ -39,9 +39,21 @@ const contactInfo = [
 ]
 
 const services = [
+  // Nursing
   'Post-Surgery Care', 'Elderly Care', 'Cardiac Care',
   'Wound Care', 'Medication Management', 'Palliative Care',
-  'Physiotherapy', 'Mother & Baby Care', 'Other',
+  'Physiotherapy', 'Mother & Baby Care',
+  // Massage
+  'Full Body Massage Therapy',
+  'Reflexology Therapy (Paralysis)',
+  'Foot Reflexology & Massage',
+  // Specialized
+  'Cardiac & Respiratory Support Therapy',
+  // Hospital
+  'Night-Time Patient Attendant',
+  // Infusion
+  'Home IV Infusion Service',
+  'Other',
 ]
 
 export default function Contact() {
@@ -255,7 +267,31 @@ export default function Contact() {
                       required
                     >
                       <option value="">Select the type of care needed</option>
-                      {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                      <optgroup label="🏥 Nursing Services">
+                        <option>Post-Surgery Care</option>
+                        <option>Elderly Care</option>
+                        <option>Cardiac Care</option>
+                        <option>Wound Care</option>
+                        <option>Medication Management</option>
+                        <option>Palliative Care</option>
+                        <option>Physiotherapy</option>
+                        <option>Mother & Baby Care</option>
+                      </optgroup>
+                      <optgroup label="💆 Massage & Reflexology">
+                        <option>Full Body Massage Therapy</option>
+                        <option>Reflexology Therapy (Paralysis)</option>
+                        <option>Foot Reflexology & Massage</option>
+                      </optgroup>
+                      <optgroup label="❤️ Specialized Therapy">
+                        <option>Cardiac & Respiratory Support Therapy</option>
+                      </optgroup>
+                      <optgroup label="🏨 Hospital & Night Care">
+                        <option>Night-Time Patient Attendant</option>
+                      </optgroup>
+                      <optgroup label="💉 Medical Infusion">
+                        <option>Home IV Infusion Service</option>
+                      </optgroup>
+                      <option>Other</option>
                     </select>
                   </div>
                   <div className="form-group form-group--full">
