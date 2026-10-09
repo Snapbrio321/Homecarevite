@@ -65,6 +65,46 @@ const specializedServices = [
   },
 ]
 
+const hospitalServices = [
+  {
+    title: 'Night-Time Patient Attendant',
+    desc: 'Professional overnight attendant service for patients during hospital stays — providing comfort, assistance, and monitoring through the night.',
+    price: '₹2,000',
+    per: 'per night',
+    features: [
+      'Male attendant for male patients',
+      'Female attendant for female patients',
+      'Hospital overnight stay support',
+      'Patient comfort & assistance',
+      'Night monitoring & care',
+    ],
+    accent: '#154360',
+    light: '#e0ecf8',
+    note: null,
+    icon: '🏥',
+  },
+]
+
+const infusionServices = [
+  {
+    title: 'Home IV Infusion Service',
+    desc: 'Home-based IV infusion service provided only on a doctor\'s prescription and administered by a qualified healthcare professional at your home.',
+    price: '₹1,500',
+    per: 'per infusion',
+    features: [
+      'Doctor\'s prescription required',
+      'Qualified healthcare professional',
+      'Safe sterile administration',
+      'All IV types supported',
+      'Post-infusion monitoring',
+    ],
+    accent: '#0a7060',
+    light: '#e0f5f1',
+    note: 'This service is provided strictly on a valid doctor\'s prescription only. Administered by a qualified and licensed healthcare professional.',
+    icon: '💉',
+  },
+]
+
 const services = [
   {
     PhIcon: PiHeartbeatDuotone,
@@ -309,6 +349,98 @@ export default function Services() {
                   </div>
                 )}
                 <a href="/bookings" className="specialized-card__cta">
+                  Book This Service <FiArrowRight size={14} aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Hospital & Night Care Attendant Services ── */}
+        <div className="services__hospital">
+          <div className="services__section-header services__section-header--blue">
+            <div className="services__section-icon services__section-icon--blue" aria-hidden="true">
+              🏥
+            </div>
+            <div>
+              <div className="badge" style={{ marginBottom: '8px' }}>Hospital Care</div>
+              <h2 className="section-title" style={{ marginBottom: '8px' }}>
+                Hospital & Night Care Attendant Services
+              </h2>
+              <p className="section-subtitle">
+                Professional overnight hospital attendants for patients in Visakhapatnam — ensuring comfort, assistance and monitoring through the night.
+              </p>
+            </div>
+          </div>
+          <div className="extra-services__grid">
+            {hospitalServices.map((s, i) => (
+              <div key={i} className="extra-card" style={{ '--accent': s.accent, '--light': s.light }}>
+                <div className="extra-card__top">
+                  <div className="extra-card__emoji" aria-hidden="true">{s.icon}</div>
+                  <div className="extra-card__price-wrap">
+                    <span className="extra-card__price">{s.price}</span>
+                    <span className="extra-card__per">{s.per}</span>
+                  </div>
+                </div>
+                <h3 className="extra-card__title">{s.title}</h3>
+                <p className="extra-card__desc">{s.desc}</p>
+                <ul className="extra-card__features">
+                  {s.features.map((f) => (
+                    <li key={f}><FiCheckCircle size={13} aria-hidden="true" /> {f}</li>
+                  ))}
+                </ul>
+                {s.note && (
+                  <div className="extra-card__note">
+                    <FiInfo size={13} aria-hidden="true" /><span>{s.note}</span>
+                  </div>
+                )}
+                <a href="/bookings" className="extra-card__cta">
+                  Book This Service <FiArrowRight size={14} aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Home Medical Infusion Services ── */}
+        <div className="services__infusion">
+          <div className="services__section-header services__section-header--green">
+            <div className="services__section-icon services__section-icon--green" aria-hidden="true">
+              💉
+            </div>
+            <div>
+              <div className="badge green" style={{ marginBottom: '8px' }}>Medical</div>
+              <h2 className="section-title" style={{ marginBottom: '8px' }}>
+                Home Medical Infusion Services
+              </h2>
+              <p className="section-subtitle">
+                Safe, sterile home IV infusion services in Visakhapatnam administered by qualified healthcare professionals on doctor's prescription.
+              </p>
+            </div>
+          </div>
+          <div className="extra-services__grid">
+            {infusionServices.map((s, i) => (
+              <div key={i} className="extra-card" style={{ '--accent': s.accent, '--light': s.light }}>
+                <div className="extra-card__top">
+                  <div className="extra-card__emoji" aria-hidden="true">{s.icon}</div>
+                  <div className="extra-card__price-wrap">
+                    <span className="extra-card__price">{s.price}</span>
+                    <span className="extra-card__per">{s.per}</span>
+                  </div>
+                </div>
+                <h3 className="extra-card__title">{s.title}</h3>
+                <p className="extra-card__desc">{s.desc}</p>
+                <ul className="extra-card__features">
+                  {s.features.map((f) => (
+                    <li key={f}><FiCheckCircle size={13} aria-hidden="true" /> {f}</li>
+                  ))}
+                </ul>
+                {s.note && (
+                  <div className="extra-card__note">
+                    <FiInfo size={13} aria-hidden="true" /><span>{s.note}</span>
+                  </div>
+                )}
+                <a href="/bookings" className="extra-card__cta">
                   Book This Service <FiArrowRight size={14} aria-hidden="true" />
                 </a>
               </div>
