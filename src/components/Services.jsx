@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiArrowRight, FiCheckCircle } from 'react-icons/fi'
+import { FiArrowRight, FiCheckCircle, FiInfo } from 'react-icons/fi'
 import {
   PiHeartbeatDuotone,
   PiBandaidsDuotone,
@@ -10,7 +10,41 @@ import {
   PiPersonSimpleRunDuotone,
   PiBabyDuotone,
 } from 'react-icons/pi'
+import { MdSpa } from 'react-icons/md'
 import './Services.css'
+
+const massageServices = [
+  {
+    title: 'Full Body Massage Therapy at Home',
+    desc: 'Relaxing full-body massage using essential organic oils, provided in the comfort of your home by a certified therapist.',
+    price: '₹1,500',
+    per: 'per sitting',
+    features: ['Certified massage therapist', 'Organic essential oils', 'In-home convenience', 'Stress & pain relief'],
+    accent: '#5b2c6f',
+    light: '#f0e6fa',
+    note: null,
+  },
+  {
+    title: 'Reflexology Therapy for Paralysis Patients',
+    desc: 'Specialized reflexology sessions for patients with paralysis, provided by a certified therapist using medicinal oils.',
+    price: '₹2,000',
+    per: 'per sitting',
+    features: ['Certified reflexology therapist', 'Medicinal oils used', 'Paralysis-specific technique', 'Supports rehabilitation'],
+    accent: '#1B3F8B',
+    light: '#e8eefa',
+    note: 'Complementary therapy — not a replacement for prescribed rehabilitation or medical treatment.',
+  },
+  {
+    title: 'Foot Reflexology & Massage',
+    desc: 'Foot massage focused on relaxation and supporting general comfort and circulation at your home.',
+    price: '₹1,500',
+    per: 'per sitting',
+    features: ['Certified foot therapist', 'Improves circulation', 'Deep relaxation', 'Supports general comfort'],
+    accent: '#0a7060',
+    light: '#e0f5f1',
+    note: null,
+  },
+]
 
 const services = [
   {
@@ -157,6 +191,58 @@ export default function Services() {
                 </div>
               </article>
           ))}
+        </div>
+
+        {/* ── Massage & Reflexology Section ── */}
+        <div className="services__massage">
+          <div className="services__massage-header">
+            <div className="services__massage-icon" aria-hidden="true">
+              <MdSpa size={32} color="var(--white)" />
+            </div>
+            <div>
+              <div className="badge" style={{ marginBottom: '8px' }}>New Service</div>
+              <h2 className="section-title" style={{ marginBottom: '8px' }}>
+                Massage & Reflexology Therapy at Home
+              </h2>
+              <p className="section-subtitle">
+                Professional massage and reflexology therapy delivered at your home in Visakhapatnam by certified therapists.
+              </p>
+            </div>
+          </div>
+
+          <div className="massage__grid">
+            {massageServices.map((m, i) => (
+              <div key={i} className="massage-card" style={{ '--accent': m.accent, '--light': m.light }}>
+                <div className="massage-card__top">
+                  <div className="massage-card__icon" aria-hidden="true">
+                    <MdSpa size={28} color={m.accent} />
+                  </div>
+                  <div className="massage-card__price-wrap">
+                    <span className="massage-card__price">{m.price}</span>
+                    <span className="massage-card__per">{m.per}</span>
+                  </div>
+                </div>
+                <h3 className="massage-card__title">{m.title}</h3>
+                <p className="massage-card__desc">{m.desc}</p>
+                <ul className="massage-card__features">
+                  {m.features.map((f) => (
+                    <li key={f}>
+                      <FiCheckCircle size={13} aria-hidden="true" /> {f}
+                    </li>
+                  ))}
+                </ul>
+                {m.note && (
+                  <div className="massage-card__note">
+                    <FiInfo size={13} aria-hidden="true" />
+                    <span>{m.note}</span>
+                  </div>
+                )}
+                <a href="/bookings" className="massage-card__cta">
+                  Book This Service <FiArrowRight size={14} aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA */}
