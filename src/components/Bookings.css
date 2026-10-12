@@ -672,3 +672,18 @@
     gap: 8px;
   }
 }
+
+/* Duration hint */
+.duration-hint {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--green);
+  padding: 2px 8px;
+  border-radius: 100px;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}

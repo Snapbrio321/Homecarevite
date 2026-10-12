@@ -93,6 +93,44 @@ const services = [
 
 const durations = ['1 Day', '3 Days', '1 Week', '2 Weeks', '1 Month', 'Ongoing']
 
+// Smart durations based on service type
+const getDurations = (serviceName) => {
+  if (!serviceName) return ['— Select a service first —']
+
+  // Per sitting services
+  if ([
+    'Full Body Massage Therapy',
+    'Reflexology Therapy (Paralysis)',
+    'Foot Reflexology & Massage',
+    'Cardiac & Respiratory Support Therapy',
+  ].includes(serviceName)) {
+    return ['1 Sitting', '2 Sittings', '3 Sittings', '5 Sittings', '10 Sittings', 'Weekly Package', 'Monthly Package']
+  }
+
+  // Per night services
+  if (serviceName === 'Night-Time Patient Attendant') {
+    return ['1 Night', '2 Nights', '3 Nights', '1 Week (7 nights)', '2 Weeks', '1 Month', 'Ongoing']
+  }
+
+  // Per infusion services
+  if (serviceName === 'Home IV Infusion Service') {
+    return ['1 Infusion', '2 Infusions', '3 Infusions', '5 Infusions', '10 Infusions', 'As Prescribed']
+  }
+
+  // Per visit services
+  if (serviceName === 'Wound Care') {
+    return ['1 Visit', '2 Visits', '3 Visits', '5 Visits', '10 Visits', '1 Week (daily)', '2 Weeks', '1 Month']
+  }
+
+  // Per session services
+  if (serviceName === 'Physiotherapy') {
+    return ['1 Session', '3 Sessions', '5 Sessions', '10 Sessions', '1 Week (daily)', '2 Weeks', '1 Month']
+  }
+
+  // Default per day nursing services
+  return ['1 Day', '3 Days', '1 Week', '2 Weeks', '1 Month', 'Ongoing']
+}
+
 export default function Bookings() {
   const [selectedPlan, setSelectedPlan] = useState('Standard Care')
   const [form, setForm] = useState({
@@ -103,7 +141,15 @@ export default function Bookings() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    // Reset duration when service changes
+    if (name === 'service') {
+      setForm(prev => ({ ...prev, service: value, duration: '' }))
+    } else {
+      setForm(prev => ({ ...prev, [name]: value }))
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -211,7 +257,7 @@ export default function Bookings() {
                 key={s.name}
                 className="charge-card charge-card--btn"
                 onClick={() => {
-                  setForm(prev => ({ ...prev, service: s.name }))
+                  setForm(prev => ({ ...prev, service: s.name, duration: '' }))
                   const el = document.getElementById('caregiver-apply')
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
@@ -351,11 +397,19 @@ export default function Bookings() {
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="b-duration">Duration <span>*</span></label>
+                      <label htmlFor="b-duration">Duration <span>*</span>
+                        {form.service && (
+                          <span className="duration-hint">
+                            {services.find(s => s.name === form.service)?.per?.replace('/', '') || 'day'}
+                          </span>
+                        )}
+                      </label>
                       <select id="b-duration" name="duration"
                         value={form.duration} onChange={handleChange} required>
                         <option value="">— Select duration —</option>
-                        {durations.map((d) => <option key={d}>{d}</option>)}
+                        {getDurations(form.service).map((d) => (
+                          <option key={d} value={d}>{d}</option>
+                        ))}
                       </select>
                     </div>
                   </div>
