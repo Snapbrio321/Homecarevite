@@ -205,6 +205,14 @@
   margin-bottom: 24px;
 }
 
+.bookings__charges-sub {
+  font-size: 0.88rem;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: -16px;
+}
+
 .charge-card {
   display: flex;
   align-items: center;
@@ -212,7 +220,7 @@
   padding: 16px;
   background: var(--off-white);
   border-radius: 14px;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   transition: var(--transition);
 }
 
@@ -220,6 +228,53 @@
   border-color: rgba(27,63,139,0.2);
   box-shadow: var(--shadow);
   transform: translateY(-2px);
+}
+
+/* Clickable button variant */
+.charge-card--btn {
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.charge-card--btn:hover {
+  border-color: var(--navy);
+  background: rgba(27,63,139,0.04);
+  box-shadow: 0 4px 20px rgba(27,63,139,0.12);
+  transform: translateY(-3px);
+}
+
+.charge-card--btn:hover .charge-card__book {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.charge-card--btn:hover .charge-card__name {
+  color: var(--navy);
+}
+
+.charge-card--btn:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.charge-card__book {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(calc(-50% + 4px));
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--navy);
+  padding: 4px 10px;
+  border-radius: 100px;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 
 .charge-card__icon {

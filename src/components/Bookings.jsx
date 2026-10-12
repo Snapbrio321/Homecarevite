@@ -204,21 +204,33 @@ export default function Bookings() {
         {/* Service Charges */}
         <div className="bookings__charges">
           <h2 className="bookings__section-title">Service-Wise Charges</h2>
+          <p className="bookings__charges-sub">Click any service to book it instantly ↓</p>
           <div className="bookings__charges-grid">
             {services.map((s) => (
-              <div key={s.name} className="charge-card">
+              <button
+                key={s.name}
+                className="charge-card charge-card--btn"
+                onClick={() => {
+                  setForm(prev => ({ ...prev, service: s.name }))
+                  const el = document.getElementById('caregiver-apply')
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
+                aria-label={`Book ${s.name} — ${s.price}${s.per}`}
+                title={`Click to book ${s.name}`}
+              >
                 <div className="charge-card__icon">{s.icon}</div>
                 <div className="charge-card__info">
                   <p className="charge-card__name">{s.name}</p>
                   <p className="charge-card__price">{s.price}<span>{s.per}</span></p>
                 </div>
-              </div>
+                <span className="charge-card__book">Book Now →</span>
+              </button>
             ))}
           </div>
         </div>
 
         {/* Booking Form + Info */}
-        <div className="bookings__bottom">
+        <div className="bookings__bottom" id="caregiver-apply">
 
           {/* Left — Info */}
           <div className="bookings__info">
