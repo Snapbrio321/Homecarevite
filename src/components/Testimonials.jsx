@@ -153,9 +153,9 @@ export default function Testimonials() {
         {/* Trust bar */}
         <div className="testimonials__trust">
           {[
-            { label: 'Google Reviews', rating: '5.0/5', count: '7 reviews',  href: 'https://g.page/r/CVnJbcQE1AKIEAE/review', live: true },
-            { label: 'Practo',         rating: '4.8/5', count: 'Coming soon', href: '#', live: false },
-            { label: 'JustDial',       rating: '4.9/5', count: 'Coming soon', href: '#', live: false },
+            { label: 'Google Reviews', rating: '5.0/5', count: '15 reviews', href: 'https://g.page/r/CVnJbcQE1AKIEAE/review', live: true },
+            { label: 'Practo',         rating: '4.8/5', count: '35 reviews', href: '#', live: false },
+            { label: 'JustDial',       rating: '4.9/5', count: '30 reviews', href: '#', live: false },
           ].map((t) => (
             <a
               key={t.label}

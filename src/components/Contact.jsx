@@ -168,7 +168,7 @@ export default function Contact() {
                     {[...Array(5)].map((_, i) => (
                       <FiStar key={i} size={13} fill="#f59e0b" color="#f59e0b" />
                     ))}
-                    <span>5.0 · 7 reviews</span>
+                    <span>5.0 · 15 reviews</span>
                   </div>
                 </div>
               </div>
