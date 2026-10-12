@@ -135,7 +135,7 @@ export default function Bookings() {
   const [selectedPlan, setSelectedPlan] = useState('Standard Care')
   const [form, setForm] = useState({
     name: '', phone: '', email: '',
-    service: '', duration: '', address: '', message: '',
+    service: '', address: '', message: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -143,12 +143,7 @@ export default function Bookings() {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    // Reset duration when service changes
-    if (name === 'service') {
-      setForm(prev => ({ ...prev, service: value, duration: '' }))
-    } else {
-      setForm(prev => ({ ...prev, [name]: value }))
-    }
+    setForm(prev => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e) => {
@@ -163,9 +158,8 @@ export default function Bookings() {
           'Full Name':        form.name,
           'Phone Number':     form.phone,
           'Email':            form.email || 'Not provided',
-          'Service Required': form.service,
-          'Care Plan':        selectedPlan,
-          'Duration':         form.duration,
+          'Service Needed': form.service,
+          '_subject':       `New Booking Request — ${form.service} — ${selectedPlan} — Home Care Vite`,
           'Address in Vizag': form.address,
           'Additional Notes': form.message || 'None',
           '_subject': `New Booking Request — ${form.service} — ${selectedPlan} — Home Care Vite`,
@@ -173,7 +167,7 @@ export default function Bookings() {
       })
       if (res.ok) {
         setSubmitted(true)
-        setForm({ name: '', phone: '', email: '', service: '', duration: '', address: '', message: '' })
+        setForm({ name: '', phone: '', email: '', service: '', address: '', message: '' })
       } else {
         setError('Something went wrong. Please call us directly at +91 86390 57903.')
       }
@@ -257,7 +251,7 @@ export default function Bookings() {
                 key={s.name}
                 className="charge-card charge-card--btn"
                 onClick={() => {
-                  setForm(prev => ({ ...prev, service: s.name, duration: '' }))
+                  setForm(prev => ({ ...prev, service: s.name }))
                   const el = document.getElementById('caregiver-apply')
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
@@ -364,7 +358,7 @@ export default function Bookings() {
                     <span>2</span> Service Details
                   </p>
                   <div className="bookings__form-row">
-                    <div className="form-group">
+                    <div className="form-group form-group--full">
                       <label htmlFor="b-service">Service Required <span>*</span></label>
                       <select id="b-service" name="service"
                         value={form.service} onChange={handleChange} required>
@@ -394,22 +388,6 @@ export default function Bookings() {
                             <option key={s.name} value={s.name}>{s.name} — {s.price}{s.per}</option>
                           ))}
                         </optgroup>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="b-duration">Duration <span>*</span>
-                        {form.service && (
-                          <span className="duration-hint">
-                            {services.find(s => s.name === form.service)?.per?.replace('/', '') || 'day'}
-                          </span>
-                        )}
-                      </label>
-                      <select id="b-duration" name="duration"
-                        value={form.duration} onChange={handleChange} required>
-                        <option value="">— Select duration —</option>
-                        {getDurations(form.service).map((d) => (
-                          <option key={d} value={d}>{d}</option>
-                        ))}
                       </select>
                     </div>
                   </div>
