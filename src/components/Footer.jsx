@@ -14,9 +14,9 @@ const footerLinks = {
     { label: 'About Us',        to: '/about'      },
     { label: 'Why Choose Us',   to: '/why-us'     },
     { label: 'Join as Caregiver', to: '/caregivers' },
-    { label: 'Our Team',        to: '/about'      },
+    { label: 'Blog',            to: '/blog'       },
     { label: 'Careers',         to: '/caregivers' },
-    { label: 'Blog',            to: '/'           },
+    { label: 'Testimonials',    to: '/testimonials' },
   ],
   Support: [
     { label: 'Contact Us',         to: '/contact'             },

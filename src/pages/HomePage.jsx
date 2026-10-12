@@ -7,6 +7,7 @@ const About        = lazy(() => import('../components/About'))
 const WhyUs        = lazy(() => import('../components/WhyUs'))
 const Caregiver    = lazy(() => import('../components/Caregiver'))
 const Testimonials = lazy(() => import('../components/Testimonials'))
+const Blog         = lazy(() => import('../components/Blog'))
 const Contact      = lazy(() => import('../components/Contact'))
 
 const SectionFallback = () => (
@@ -38,6 +39,10 @@ export default function HomePage() {
 
       <Suspense fallback={<SectionFallback />}>
         <Testimonials />
+      </Suspense>
+
+      <Suspense fallback={<SectionFallback />}>
+        <Blog />
       </Suspense>
 
       <Suspense fallback={<SectionFallback />}>

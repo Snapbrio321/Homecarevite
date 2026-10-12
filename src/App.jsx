@@ -15,6 +15,10 @@ const CaregiverPage    = lazy(() => import('./pages/CaregiverPage'))
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'))
 const ContactPage      = lazy(() => import('./pages/ContactPage'))
 const BookingsPage     = lazy(() => import('./pages/BookingsPage'))
+const BlogPage         = lazy(() => import('./pages/BlogPage'))
+const BlogPost1        = lazy(() => import('./pages/BlogPost1'))
+const BlogPost2        = lazy(() => import('./pages/BlogPost2'))
+const BlogPost3        = lazy(() => import('./pages/BlogPost3'))
 
 // Lazy load footer & legal modal
 const Footer    = lazy(() => import('./components/Footer'))
@@ -50,6 +54,10 @@ function AppContent() {
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact"      element={<ContactPage />} />
           <Route path="/bookings"     element={<BookingsPage />} />
+          <Route path="/blog"         element={<BlogPage />} />
+          <Route path="/blog/home-care-nursing-services-vizag-guide"    element={<BlogPost1 />} />
+          <Route path="/blog/post-surgery-care-home-visakhapatnam"      element={<BlogPost2 />} />
+          <Route path="/blog/elderly-care-at-home-vizag"                element={<BlogPost3 />} />
           {/* Fallback */}
           <Route path="*"             element={<HomePage />} />
         </Routes>
