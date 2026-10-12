@@ -310,3 +310,19 @@
     align-items: center;
   }
 }
+
+/* Hero image */
+.blog-post__hero-img {
+  max-width: 900px;
+  margin-bottom: 48px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(27,63,139,0.15);
+  border: 1px solid var(--border);
+}
+
+.blog-post__hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

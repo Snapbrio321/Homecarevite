@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiArrowLeft, FiPhone, FiClock, FiTag } from 'react-icons/fi'
 import { MdHealthAndSafety } from 'react-icons/md'
+import blogImg1 from '../assets/Complete Guide to Home Care Nursing in Vizag.png'
 import './BlogPost.css'
 
 export default function BlogPost1() {
@@ -39,6 +40,15 @@ export default function BlogPost1() {
             </div>
           </div>
         </header>
+
+        {/* Hero Image */}
+        <div className="blog-post__hero-img">
+          <img
+            src={blogImg1}
+            alt="Complete Guide to Home Care Nursing Services in Visakhapatnam Vizag — Home Care Vite"
+            loading="eager"
+          />
+        </div>
 
         {/* Content */}
         <div className="blog-post__content">

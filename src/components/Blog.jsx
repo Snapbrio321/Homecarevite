@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiArrowRight, FiClock, FiTag } from 'react-icons/fi'
+import blogImg1 from '../assets/Complete Guide to Home Care Nursing in Vizag.png'
 import './Blog.css'
 
 export const blogPosts = [
@@ -13,7 +14,7 @@ export const blogPosts = [
     readTime: '7 min read',
     tag: 'Home Nursing',
     tagColor: '#1B3F8B',
-    image: null,
+    image: blogImg1,
   },
   {
     id: 'post-surgery-care-home-visakhapatnam',
@@ -56,11 +57,15 @@ export default function Blog() {
         <div className="blog__grid">
           {blogPosts.map((post) => (
             <article key={post.id} className="blog-card">
-              {/* Image placeholder */}
-              <div className="blog-card__img" style={{ background: `linear-gradient(135deg, ${post.tagColor}22, ${post.tagColor}11)` }}>
-                <div className="blog-card__img-icon" style={{ color: post.tagColor }}>
-                  <span style={{ fontSize: '3rem' }}>📋</span>
-                </div>
+              {/* Image */}
+              <div className="blog-card__img" style={{ background: post.image ? 'transparent' : `linear-gradient(135deg, ${post.tagColor}22, ${post.tagColor}11)` }}>
+                {post.image ? (
+                  <img src={post.image} alt={post.title} className="blog-card__img-real" />
+                ) : (
+                  <div className="blog-card__img-icon" style={{ color: post.tagColor }}>
+                    <span style={{ fontSize: '3rem' }}>📋</span>
+                  </div>
+                )}
               </div>
 
               <div className="blog-card__body">
