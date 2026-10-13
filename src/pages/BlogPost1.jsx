@@ -209,7 +209,7 @@ export default function BlogPost1() {
             {[
               {
                 q: 'How do I hire a home nurse in Visakhapatnam?',
-                a: 'Call Home Care Vite at +91 86390 57903 or fill the online booking form at homecarevite.vercel.app. A care coordinator will contact you within one hour to arrange a free home assessment.',
+                a: 'Call Home Care Vite at +91 86390 57903 or fill the online booking form at homecarevite.life. A care coordinator will contact you within one hour to arrange a free home assessment.',
               },
               {
                 q: 'What is the minimum booking duration for home nursing in Vizag?',

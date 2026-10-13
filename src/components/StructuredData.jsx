@@ -5,13 +5,13 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "LocalBusiness"],
-    "@id": "https://homecarevite.vercel.app/#business",
+    "@id": "https://homecarevite.life/#business",
     "name": "Home Care Vite",
     "alternateName": "HomeCareVite",
     "description": "Home Care Vite provides professional home care nursing services in Visakhapatnam including post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care across all areas of Vizag.",
-    "url": "https://homecarevite.vercel.app/",
-    "logo": "https://homecarevite.vercel.app/logo.jpeg",
-    "image": "https://homecarevite.vercel.app/og-image.jpg",
+    "url": "https://homecarevite.life/",
+    "logo": "https://homecarevite.life/logo.jpeg",
+    "image": "https://homecarevite.life/og-image.jpg",
     "telephone": "+918639057903",
     "email": "homecarevite@gmail.com",
     "foundingDate": "2023",
@@ -84,7 +84,7 @@ const structuredData = [
     "serviceType": "Home Nursing Services",
     "provider": {
       "@type": "LocalBusiness",
-      "@id": "https://homecarevite.vercel.app/#business"
+      "@id": "https://homecarevite.life/#business"
     },
     "areaServed": {
       "@type": "City",
@@ -208,19 +208,19 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://homecarevite.vercel.app/#website",
-    "url": "https://homecarevite.vercel.app/",
+    "@id": "https://homecarevite.life/#website",
+    "url": "https://homecarevite.life/",
     "name": "Home Care Vite",
     "description": "Professional home nursing services in Visakhapatnam, Andhra Pradesh",
     "publisher": {
       "@type": "Organization",
-      "@id": "https://homecarevite.vercel.app/#business"
+      "@id": "https://homecarevite.life/#business"
     },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://homecarevite.vercel.app/search?q={search_term_string}"
+        "urlTemplate": "https://homecarevite.life/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -231,14 +231,14 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home",         "item": "https://homecarevite.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Services",     "item": "https://homecarevite.vercel.app/services" },
-      { "@type": "ListItem", "position": 3, "name": "About Us",     "item": "https://homecarevite.vercel.app/about" },
-      { "@type": "ListItem", "position": 4, "name": "Why Us",       "item": "https://homecarevite.vercel.app/why-us" },
-      { "@type": "ListItem", "position": 5, "name": "Caregivers",   "item": "https://homecarevite.vercel.app/caregivers" },
-      { "@type": "ListItem", "position": 6, "name": "Testimonials", "item": "https://homecarevite.vercel.app/testimonials" },
-      { "@type": "ListItem", "position": 7, "name": "Bookings",      "item": "https://homecarevite.vercel.app/bookings" },
-      { "@type": "ListItem", "position": 8, "name": "Contact",      "item": "https://homecarevite.vercel.app/contact" }
+      { "@type": "ListItem", "position": 1, "name": "Home",         "item": "https://homecarevite.life/" },
+      { "@type": "ListItem", "position": 2, "name": "Services",     "item": "https://homecarevite.life/services" },
+      { "@type": "ListItem", "position": 3, "name": "About Us",     "item": "https://homecarevite.life/about" },
+      { "@type": "ListItem", "position": 4, "name": "Why Us",       "item": "https://homecarevite.life/why-us" },
+      { "@type": "ListItem", "position": 5, "name": "Caregivers",   "item": "https://homecarevite.life/caregivers" },
+      { "@type": "ListItem", "position": 6, "name": "Testimonials", "item": "https://homecarevite.life/testimonials" },
+      { "@type": "ListItem", "position": 7, "name": "Bookings",      "item": "https://homecarevite.life/bookings" },
+      { "@type": "ListItem", "position": 8, "name": "Contact",      "item": "https://homecarevite.life/contact" }
     ]
   }
 ]
@@ -256,4 +256,5 @@ export default function StructuredData() {
     </>
   )
 }
+
 
