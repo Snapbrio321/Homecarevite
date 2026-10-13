@@ -4,8 +4,13 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap Index (all sitemaps)
+Sitemap: https://homecarevite.life/sitemap-index.xml
+
+# Individual Sitemaps
 Sitemap: https://homecarevite.life/sitemap.xml
+Sitemap: https://homecarevite.life/sitemap-blog.xml
+Sitemap: https://homecarevite.life/sitemap-keywords.xml
 
 # Block unnecessary paths
 Disallow: /node_modules/

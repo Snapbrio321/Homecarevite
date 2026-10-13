@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Blog Listing Page -->
+  <url>
+    <loc>https://homecarevite.life/blog</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Post 1 -->
+  <url>
+    <loc>https://homecarevite.life/blog/home-care-nursing-services-vizag-guide</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://homecarevite.life/assets/Complete%20Guide%20to%20Home%20Care%20Nursing%20in%20Vizag.png</image:loc>
+      <image:title>Complete Guide to Home Care Nursing Services in Visakhapatnam Vizag</image:title>
+      <image:caption>Home Care Vite - Complete Guide to Home Care Nursing in Visakhapatnam (Vizag)</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog Post 2 -->
+  <url>
+    <loc>https://homecarevite.life/blog/post-surgery-care-home-visakhapatnam</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Post 3 -->
+  <url>
+    <loc>https://homecarevite.life/blog/elderly-care-at-home-vizag</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
