@@ -168,6 +168,8 @@ const services = [
     title: 'Physiotherapy',
     desc: 'In-home physiotherapy sessions to restore mobility, manage pain and rebuild strength after injury, surgery, or illness.',
     features: ['Mobility restoration', 'Strength & balance training', 'Pain management therapy'],
+    doctor: 'Dr. M. Vijay Kumar',
+    doctorRole: 'Physiotherapist',
   },
   {
     PhIcon: PiBabyDuotone,
@@ -237,6 +239,17 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Doctor badge */}
+                  {svc.doctor && (
+                    <div className="svc-card__doctor">
+                      <span className="svc-card__doctor-icon">👨‍⚕️</span>
+                      <div>
+                        <p className="svc-card__doctor-name">{svc.doctor}</p>
+                        <p className="svc-card__doctor-role">{svc.doctorRole}</p>
+                      </div>
+                    </div>
+                  )}
 
                   <a
                     href="/contact"
