@@ -82,6 +82,18 @@ export default function About() {
               We provide home care services in Vizag across MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada, Seethammadhara, Siripuram, Bheemunipatnam and surrounding localities. Our licensed nurses, physiotherapists and care coordinators deliver personalised home care nursing, patient care and caretaker services for every patient — from newborns to elderly, from post-surgical recovery to long-term chronic care.
             </p>
 
+            {/* Chairman */}
+            <div className="about__chairman">
+              <div className="about__chairman-icon" aria-hidden="true">
+                <MdVerified size={22} color="var(--white)" />
+              </div>
+              <div>
+                <p className="about__chairman-label">Chairman & Founder</p>
+                <p className="about__chairman-name">Nooka Raju. CH</p>
+                <p className="about__chairman-org">Home Care Vite, Visakhapatnam</p>
+              </div>
+            </div>
+
             {/* Values */}
             <div className="about__values" role="list">
               {values.map((v) => (

@@ -15,6 +15,15 @@ const structuredData = [
     "telephone": "+918639057903",
     "email": "homecarevite@gmail.com",
     "foundingDate": "2023",
+    "founder": {
+      "@type": "Person",
+      "name": "Nooka Raju CH",
+      "jobTitle": "Chairman & Founder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Home Care Vite"
+      }
+    },
     "priceRange": "₹₹",
     "currenciesAccepted": "INR",
     "paymentAccepted": "Cash, UPI, Bank Transfer, Credit Card, Debit Card",
