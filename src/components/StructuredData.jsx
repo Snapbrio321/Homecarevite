@@ -8,7 +8,7 @@ const structuredData = [
     "@id": "https://homecarevite.life/#business",
     "name": "Home Care Vite",
     "alternateName": "HomeCareVite",
-    "description": "Home Care Vite provides professional home care nursing services in Visakhapatnam including post-surgery care, elderly care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care across all areas of Vizag.",
+    "description": "Home Care Vite provides home care services in Vizag — home care nursing services, patient care services, elderly care services at home & caretaker services in Visakhapatnam. Post-surgery care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care across all areas of Vizag.",
     "url": "https://homecarevite.life/",
     "logo": "https://homecarevite.life/logo.jpeg",
     "image": "https://homecarevite.life/og-image.jpg",
@@ -94,6 +94,10 @@ const structuredData = [
       "@type": "OfferCatalog",
       "name": "Home Nursing Services",
       "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Care Services in Vizag", "description": "Professional home care services in Vizag including nursing, patient care, elderly care and caretaker services across all areas of Visakhapatnam." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patient Care Services in Vizag", "description": "Certified patient care services at home in Visakhapatnam — post-surgery, bedridden, chronic disease and hospital discharge care." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elderly Care Services at Home", "description": "Compassionate elderly care services at home in Visakhapatnam including daily assistance, mobility support and chronic disease management." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Caretaker Services in Vizag", "description": "Professional caretaker services in Visakhapatnam for patients, elderly and post-surgery recovery at home across all areas of Vizag." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Post-Surgery Care", "description": "Expert wound care, medication management, and rehabilitation support after surgical procedures at home." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elderly Care", "description": "Compassionate daily assistance for seniors including personal hygiene, mobility support, and chronic disease management." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cardiac Care", "description": "Ongoing monitoring for heart patients including vital signs tracking and medication adherence." } },
@@ -113,6 +117,46 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What home care services does Home Care Vite provide in Vizag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Home Care Vite provides comprehensive home care services in Vizag including home care nursing services, patient care services, elderly care services at home, and caretaker services across all areas of Visakhapatnam — available 24/7."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What patient care services are available at home in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Home Care Vite provides patient care services at home in Visakhapatnam including post-surgery care, wound care, medication management, cardiac monitoring, IV infusion, and bedridden patient care across all areas of Vizag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide elderly care services at home in Vizag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Home Care Vite provides elderly care services at home in Visakhapatnam including daily personal assistance, fall prevention, medication management, companionship, and chronic disease care for senior citizens across all areas of Vizag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What caretaker services does Home Care Vite offer in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Home Care Vite provides professional caretaker services in Visakhapatnam including patient attendants, elderly caretakers, night attendants, and post-surgery caretakers — both male and female — across all areas of Vizag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What home care nursing services are available in Vizag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Home Care Vite provides home care nursing services in Vizag including post-surgery nursing, cardiac care, wound care, medication management, physiotherapy, palliative care, and mother & baby nursing across all areas of Visakhapatnam."
+        }
+      },
       {
         "@type": "Question",
         "name": "What home care nursing services does Home Care Vite provide in Visakhapatnam?",

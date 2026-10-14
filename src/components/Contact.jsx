@@ -104,10 +104,10 @@ export default function Contact() {
         <div className="contact__header">
           <div className="badge">Contact Us</div>
           <h2 id="contact-heading" className="section-title">
-            Home Care Nursing Services in Visakhapatnam
+            Home Care Services in Vizag — Book Now
           </h2>
           <p className="section-subtitle">
-            Book certified home care nursing services anywhere in Vizag. Call us or fill the form — our care coordinator will contact you within one hour for a free home assessment.
+            Book home care nursing, patient care, elderly care or caretaker services anywhere in Visakhapatnam. Our care coordinator will contact you within one hour for a free home assessment.
           </p>
         </div>
 

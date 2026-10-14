@@ -73,13 +73,13 @@ export default function About() {
           <div className="about__content">
             <div className="badge">About Us</div>
             <h2 id="about-heading" className="section-title">
-              Visakhapatnam's Trusted Home Care Nursing Services Since 2023
+              Trusted Home Care Services in Vizag Since 2023
             </h2>
             <p className="about__lead">
-              Home Care Vite is Visakhapatnam's dedicated home care nursing service — founded in 2023 with a mission to bring professional nursing care directly to patients' homes across Vizag.
+              Home Care Vite is Visakhapatnam's trusted provider of home care services — including home care nursing, patient care, elderly care, and caretaker services across all areas of Vizag since 2023.
             </p>
             <p className="about__body">
-              We provide home care nursing services across all areas of Visakhapatnam including MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada, Seethammadhara, Siripuram, Bheemunipatnam and surrounding localities. Our licensed nurses, physiotherapists and care coordinators deliver personalised home care nursing for every patient — from newborns to elderly, from post-surgical recovery to long-term chronic care.
+              We provide home care services in Vizag across MVP Colony, Dwaraka Nagar, Gajuwaka, Rushikonda, Madhurawada, Seethammadhara, Siripuram, Bheemunipatnam and surrounding localities. Our licensed nurses, physiotherapists and care coordinators deliver personalised home care nursing, patient care and caretaker services for every patient — from newborns to elderly, from post-surgical recovery to long-term chronic care.
             </p>
 
             {/* Values */}

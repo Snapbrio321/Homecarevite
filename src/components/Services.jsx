@@ -197,10 +197,10 @@ export default function Services() {
         <div className="services__header">
           <div className="badge green">Our Services</div>
           <h2 id="services-heading" className="section-title">
-            Home Care Nursing Services in Visakhapatnam
+            Home Care Services & Nursing in Visakhapatnam
           </h2>
           <p className="section-subtitle">
-            From post-operative recovery to long-term chronic disease management, our certified nurses provide complete home care nursing services across all areas of Visakhapatnam (Vizag).
+            Home care nursing services, patient care, elderly care & caretaker services across all areas of Visakhapatnam (Vizag) — delivered at your home by certified professionals.
           </p>
         </div>
 
