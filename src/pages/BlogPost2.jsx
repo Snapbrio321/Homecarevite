@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiArrowLeft, FiPhone, FiClock, FiTag } from 'react-icons/fi'
 import { MdHealthAndSafety } from 'react-icons/md'
+import blogImg2 from '../assets/Post-Surgery Home Care in Visakhapatnam.png'
 import './BlogPost.css'
 
 export default function BlogPost2() {
@@ -36,6 +37,15 @@ export default function BlogPost2() {
             </div>
           </div>
         </header>
+
+        {/* Hero Image */}
+        <div className="blog-post__hero-img">
+          <img
+            src={blogImg2}
+            alt="Post-Surgery Home Care in Visakhapatnam Vizag — Home Care Vite"
+            loading="eager"
+          />
+        </div>
 
         <div className="blog-post__content">
           <p>
