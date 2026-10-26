@@ -1,29 +1,72 @@
 import React from 'react'
 
 const structuredData = [
-  // ── 1. Local Medical Business ──
+  // ── 1. Local Medical Business — Full Trust Signals ──
   {
     "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "LocalBusiness"],
+    "@type": ["MedicalBusiness", "LocalBusiness", "HealthAndBeautyBusiness"],
     "@id": "https://homecarevite.life/#business",
     "name": "Home Care Vite",
-    "alternateName": "HomeCareVite",
+    "legalName": "Home Care Vite",
+    "alternateName": ["HomeCareVite", "Home Care Vite Visakhapatnam", "Home Care Services Vizag"],
     "description": "Home Care Vite provides home care services in Vizag — home care nursing services, patient care services, elderly care services at home & caretaker services in Visakhapatnam. Post-surgery care, cardiac monitoring, wound care, medication management, palliative care, physiotherapy, and mother & baby care across all areas of Vizag.",
     "url": "https://homecarevite.life/",
-    "logo": "https://homecarevite.life/logo.jpeg",
-    "image": "https://homecarevite.life/og-image.jpg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://homecarevite.life/favicon.jpeg",
+      "width": 512,
+      "height": 512
+    },
+    "image": [
+      "https://homecarevite.life/favicon.jpeg",
+      "https://homecarevite.life/og-image.jpg"
+    ],
     "telephone": "+918639057903",
+    "faxNumber": "+918639057903",
     "email": "homecarevite@gmail.com",
     "foundingDate": "2023",
     "founder": {
       "@type": "Person",
       "name": "Nooka Raju CH",
+      "givenName": "Nooka Raju",
+      "familyName": "CH",
       "jobTitle": "Chairman & Founder",
+      "telephone": "+918639057903",
+      "email": "homecarevite@gmail.com",
       "worksFor": {
         "@type": "Organization",
         "name": "Home Care Vite"
       }
     },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+918639057903",
+        "contactType": "customer service",
+        "contactOption": "TollFree",
+        "availableLanguage": ["English", "Telugu", "Hindi"],
+        "areaServed": "IN",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "opens": "00:00",
+          "closes": "23:59",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        }
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+918639057903",
+        "contactType": "emergency",
+        "availableLanguage": ["English", "Telugu"],
+        "areaServed": "IN"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "homecarevite@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Telugu"]
+      }
+    ],
     "priceRange": "₹₹",
     "currenciesAccepted": "INR",
     "paymentAccepted": "Cash, UPI, Bank Transfer, Credit Card, Debit Card",
@@ -257,17 +300,58 @@ const structuredData = [
     ]
   },
 
-  // ── 4. Website / WebPage ──
+  // ── 4. Organization — Full Trust Signal ──
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://homecarevite.life/#organization",
+    "name": "Home Care Vite",
+    "legalName": "Home Care Vite",
+    "url": "https://homecarevite.life/",
+    "logo": "https://homecarevite.life/favicon.jpeg",
+    "foundingDate": "2023",
+    "founder": {
+      "@type": "Person",
+      "name": "Nooka Raju CH",
+      "jobTitle": "Chairman & Founder"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918639057903",
+      "contactType": "customer service",
+      "email": "homecarevite@gmail.com",
+      "availableLanguage": ["English", "Telugu"],
+      "areaServed": "IN",
+      "contactOption": "TollFree"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "FF 3, backside of Vedanta Hospital, first bus stop, PM Palem",
+      "addressLocality": "Madhurawada",
+      "addressRegion": "Andhra Pradesh",
+      "postalCode": "530045",
+      "addressCountry": "IN"
+    },
+    "telephone": "+918639057903",
+    "email": "homecarevite@gmail.com",
+    "sameAs": [
+      "https://homecarevite.vercel.app",
+      "https://github.com/Snapbrio321/Homecarevite",
+      "https://g.page/r/CVnJbcQE1AKIEAE/review"
+    ]
+  },
+
+  // ── 5. Website / WebPage ──
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://homecarevite.life/#website",
     "url": "https://homecarevite.life/",
     "name": "Home Care Vite",
-    "description": "Professional home nursing services in Visakhapatnam, Andhra Pradesh",
+    "description": "Home care services in Vizag — home care nursing, patient care, elderly care & caretaker services in Visakhapatnam",
     "publisher": {
       "@type": "Organization",
-      "@id": "https://homecarevite.life/#business"
+      "@id": "https://homecarevite.life/#organization"
     },
     "potentialAction": {
       "@type": "SearchAction",
@@ -279,7 +363,7 @@ const structuredData = [
     }
   },
 
-  // ── 5. BreadcrumbList ──
+  // ── 6. BreadcrumbList ──
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
