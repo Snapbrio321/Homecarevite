@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FiArrowRight, FiClock, FiTag } from 'react-icons/fi'
 import blogImg1 from '../assets/Complete Guide to Home Care Nursing in Vizag.png'
 import blogImg2 from '../assets/Post-Surgery Home Care in Visakhapatnam.png'
+import blogImg3 from '../assets/Home Nursing Services in Vizag.png'
 import './Blog.css'
 
 export const blogPosts = [
@@ -37,7 +38,7 @@ export const blogPosts = [
     readTime: '6 min read',
     tag: 'Senior Care',
     tagColor: '#154360',
-    image: null,
+    image: blogImg3,
   },
 ]
 
