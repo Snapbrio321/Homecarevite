@@ -19,6 +19,7 @@ const BlogPage         = lazy(() => import('./pages/BlogPage'))
 const BlogPost1        = lazy(() => import('./pages/BlogPost1'))
 const BlogPost2        = lazy(() => import('./pages/BlogPost2'))
 const BlogPost3        = lazy(() => import('./pages/BlogPost3'))
+const BlogPost4        = lazy(() => import('./pages/BlogPost4'))
 
 // Lazy load footer & legal modal
 const Footer    = lazy(() => import('./components/Footer'))
@@ -58,6 +59,7 @@ function AppContent() {
           <Route path="/blog/home-care-nursing-services-vizag-guide"    element={<BlogPost1 />} />
           <Route path="/blog/post-surgery-care-home-visakhapatnam"      element={<BlogPost2 />} />
           <Route path="/blog/elderly-care-at-home-vizag"                element={<BlogPost3 />} />
+          <Route path="/blog/home-care-services-near-me-vizag"          element={<BlogPost4 />} />
           {/* Fallback */}
           <Route path="*"             element={<HomePage />} />
         </Routes>

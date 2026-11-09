@@ -40,6 +40,17 @@ export const blogPosts = [
     tagColor: '#154360',
     image: blogImg3,
   },
+  {
+    id: 'home-care-services-near-me-vizag',
+    slug: 'home-care-services-near-me-vizag',
+    title: 'Home Care Services Near Me in Vizag — Caretaker, Patient Care & Nursing at Home',
+    excerpt: 'Looking for home care services near you in Vizag? Complete guide to caretaker services, patient care, elderly care & home nursing across all areas of Visakhapatnam — with costs.',
+    date: 'November 4, 2026',
+    readTime: '8 min read',
+    tag: 'Home Care Guide',
+    tagColor: '#3A7D2C',
+    image: null,
+  },
 ]
 
 export default function Blog() {
