@@ -4,6 +4,7 @@ import { FiArrowRight, FiClock, FiTag } from 'react-icons/fi'
 import blogImg1 from '../assets/Complete Guide to Home Care Nursing in Vizag.png'
 import blogImg2 from '../assets/Post-Surgery Home Care in Visakhapatnam.png'
 import blogImg3 from '../assets/Home Nursing Services in Vizag.png'
+import blogImg4 from '../assets/Compassionate Home Care in Vizag.png'
 import './Blog.css'
 
 export const blogPosts = [
@@ -49,7 +50,7 @@ export const blogPosts = [
     readTime: '8 min read',
     tag: 'Home Care Guide',
     tagColor: '#3A7D2C',
-    image: null,
+    image: blogImg4,
   },
 ]
 
